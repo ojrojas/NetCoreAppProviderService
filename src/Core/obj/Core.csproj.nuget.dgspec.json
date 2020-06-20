@@ -1,0 +1,58 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/orojasg/Sources/Projects/NetCore/Cinte/src/Core/Core.csproj": {}
+  },
+  "projects": {
+    "/home/orojasg/Sources/Projects/NetCore/Cinte/src/Core/Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/orojasg/Sources/Projects/NetCore/Cinte/src/Core/Core.csproj",
+        "projectName": "Core",
+        "projectPath": "/home/orojasg/Sources/Projects/NetCore/Cinte/src/Core/Core.csproj",
+        "packagesPath": "/home/orojasg/.nuget/packages/",
+        "outputPath": "/home/orojasg/Sources/Projects/NetCore/Cinte/src/Core/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/orojasg/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/3.1.104/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

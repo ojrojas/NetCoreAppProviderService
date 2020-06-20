@@ -1,0 +1,8 @@
+/home/orojasg/Sources/Projects/NetCore/Cinte/src/Core/bin/Debug/netstandard2.1/Core.deps.json
+/home/orojasg/Sources/Projects/NetCore/Cinte/src/Core/bin/Debug/netstandard2.1/Core.dll
+/home/orojasg/Sources/Projects/NetCore/Cinte/src/Core/bin/Debug/netstandard2.1/Core.pdb
+/home/orojasg/Sources/Projects/NetCore/Cinte/src/Core/obj/Debug/netstandard2.1/Core.csprojAssemblyReference.cache
+/home/orojasg/Sources/Projects/NetCore/Cinte/src/Core/obj/Debug/netstandard2.1/Core.AssemblyInfoInputs.cache
+/home/orojasg/Sources/Projects/NetCore/Cinte/src/Core/obj/Debug/netstandard2.1/Core.AssemblyInfo.cs
+/home/orojasg/Sources/Projects/NetCore/Cinte/src/Core/obj/Debug/netstandard2.1/Core.dll
+/home/orojasg/Sources/Projects/NetCore/Cinte/src/Core/obj/Debug/netstandard2.1/Core.pdb
