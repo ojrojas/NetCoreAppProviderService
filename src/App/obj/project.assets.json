@@ -9893,11 +9893,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/orojasg/Sources/Projects/NetCore/Cinte/src/App/App.csproj",
+      "projectUniqueName": "/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/App.csproj",
       "projectName": "App",
-      "projectPath": "/home/orojasg/Sources/Projects/NetCore/Cinte/src/App/App.csproj",
+      "projectPath": "/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/App.csproj",
       "packagesPath": "/home/orojasg/.nuget/packages/",
-      "outputPath": "/home/orojasg/Sources/Projects/NetCore/Cinte/src/App/obj/",
+      "outputPath": "/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/orojasg/.nuget/NuGet/NuGet.Config"
@@ -9911,8 +9911,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "/home/orojasg/Sources/Projects/NetCore/Cinte/src/Infraestructure/Infraestructure.csproj": {
-              "projectPath": "/home/orojasg/Sources/Projects/NetCore/Cinte/src/Infraestructure/Infraestructure.csproj"
+            "/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/Infraestructure/Infraestructure.csproj": {
+              "projectPath": "/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/Infraestructure/Infraestructure.csproj"
             }
           }
         }
