@@ -4,14 +4,36 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+        //Api
         {
-            "name": ".NET Core Launch (web)",
+            "name": ".NET Core Launch (Api)",
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
             "program": "${workspaceFolder}/src/Api/bin/Debug/netcoreapp3.1/Api.dll",
             "args": [],
             "cwd": "${workspaceFolder}/src/Api",
+            "stopAtEntry": false,
+            "serverReadyAction": {
+                "action": "openExternally",
+                "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+            },
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            },
+            "sourceFileMap": {
+                "/Views": "${workspaceFolder}/Views"
+            }
+        },
+        //App
+        {
+            "name": ".NET Core Launch (App)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/src/App/bin/Debug/netcoreapp3.1/App.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/src/App",
             "stopAtEntry": false,
             "serverReadyAction": {
                 "action": "openExternally",

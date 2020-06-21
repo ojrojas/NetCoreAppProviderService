@@ -372,3 +372,10 @@
 /home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/obj/Debug/netcoreapp3.1/staticwebassets/App.StaticWebAssets.xml
 /home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/obj/Debug/netcoreapp3.1/App.dll
 /home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/obj/Debug/netcoreapp3.1/App.pdb
+/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/bin/Debug/netcoreapp3.1/Api.StaticWebAssets.xml
+/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/bin/Debug/netcoreapp3.1/Api
+/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/bin/Debug/netcoreapp3.1/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/bin/Debug/netcoreapp3.1/Microsoft.IdentityModel.Protocols.dll
+/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/bin/Debug/netcoreapp3.1/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/bin/Debug/netcoreapp3.1/Api.dll
+/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/bin/Debug/netcoreapp3.1/Api.pdb
