@@ -20541,6 +20541,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/Views/Manage/Login.cshtml",
+      "TargetPath": "Views\\Manage\\Login.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/Views/Home/Privacy.cshtml",
       "TargetPath": "Views\\Home\\Privacy.cshtml",
       "FileKind": "mvc"

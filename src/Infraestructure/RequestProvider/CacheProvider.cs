@@ -10,7 +10,12 @@ namespace Cinte.Infraestructure.RequestProvider
         /// <summary>
         /// Obejto cache referencia a la cache de aplicacion.
         /// </summary>
-        IMemoryCache cache = new MemoryCache(new MemoryCacheOptions{ SizeLimit=1024});
+        private readonly IMemoryCache _cache; 
+
+        public CacheProvider(IMemoryCache cache)
+        {
+            _cache = cache;
+        }
 
         /// <summary>
         /// Setear el objeto token de cache
@@ -18,7 +23,12 @@ namespace Cinte.Infraestructure.RequestProvider
         /// <param name="token"></param>
         public void SetearTokenCache(Token token)
         {
-            cache.Set("cacheToken", token);
+              var cacheEntryOptions = new MemoryCacheEntryOptions()
+                // Set cache entry size by extension method.
+                .SetSize(1024)
+                // Keep in cache for this time, reset time if accessed.
+                .SetSlidingExpiration(TimeSpan.FromMinutes(120));
+            _cache.Set("cacheToken", token, cacheEntryOptions);
         }
 
         /// <summary>
@@ -27,7 +37,7 @@ namespace Cinte.Infraestructure.RequestProvider
         /// <returns>Retorna objeto cache.</returns>
         public object ObtenerTokenCache()
         {
-            return cache.Get("cacheToken");
+            return _cache.Get("cacheToken");
         }
     }
 }

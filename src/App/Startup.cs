@@ -2,8 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Cinte.Core.Infraestructure;
 using Cinte.Infraestructure.Data;
 using Cinte.Infraestructure.Identity;
+using Cinte.Infraestructure.RequestProvider;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -26,6 +28,17 @@ namespace App
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+             services.AddCors(options =>
+             options.AddPolicy("CorsPolicy",
+                 builder => builder
+                 .SetIsOriginAllowed((host) => true)
+                 .AllowAnyMethod()
+                 .AllowAnyHeader()
+                 .AllowCredentials()
+                 ));
+
+            services.AddScoped<ICacheProvider, CacheProvider>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -40,7 +53,10 @@ namespace App
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-            app.UseHttpsRedirection();
+
+             app.UseCors("CorsPolicy");
+
+            // app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseRouting();

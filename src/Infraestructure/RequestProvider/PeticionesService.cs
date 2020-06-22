@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Cinte.Core.Entities;
 using Cinte.Core.Infraestructure;
 using Cinte.Infraestructure.Exceptions;
+using Cinte.Infraestructure.Identity;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
@@ -36,10 +37,11 @@ namespace Cinte.Infraestructure.RequestProvider
         /// <date>20/06/2020.</date>
         private readonly Uri _uriToken;
 
-        private readonly ICacheProvider cache = new CacheProvider();
+        private readonly ICacheProvider _cache;
 
-        public PeticionesService(Uri uri, Uri uriToken)
+        public PeticionesService(Uri uriToken,ICacheProvider cache,Uri uri = null)
         {
+            _cache = cache;
             _uri = uri;
             _uriToken = uriToken;
             _serializerSettings = new JsonSerializerSettings
@@ -68,7 +70,6 @@ namespace Cinte.Infraestructure.RequestProvider
             }
             catch (System.Exception ex)
             {
-
                 throw ex;
             }
         }
@@ -109,7 +110,7 @@ namespace Cinte.Infraestructure.RequestProvider
             return result;
         }
 
-        public async Task<T> PostAsync<T>(T objeto, Dictionary<string, string> headers)
+        public async Task<T> PostAsync<T>(T objeto, Dictionary<string, string> headers= null)
         {
            var token = await ObtenerToken();
             HttpClient httpClient = CrearHttpCliente(token);
@@ -135,16 +136,17 @@ namespace Cinte.Infraestructure.RequestProvider
         #region Metodos Privados
 
         /// <summary>
-        /// Obtiene el token de cache.
+        /// Obtiene el token de _cache.
         /// </summary>
         /// <returns>Token de aplicacion</returns>
-        private async Task<Token> ObtenerToken()
+        private async Task<Token> ObtenerToken(object login = null)
         {
             Token token = null;
-            if (cache.ObtenerTokenCache() != null)
-                token = cache.ObtenerTokenCache() as Token;
+            var cache = this._cache.ObtenerTokenCache();
+            if (cache != null)
+                token = cache as Token;
             else
-                token = await ConsultarToken();
+                token = await ConsultarToken(login);
             return token;
         }
 
@@ -154,17 +156,19 @@ namespace Cinte.Infraestructure.RequestProvider
         /// <returns>Token</returns>
         /// <author>Oscar Julian Rojas Garces</author>
         /// <date>20/06/2020.</date>
-        private async Task<Token> ConsultarToken()
+        private async Task<Token> ConsultarToken(object login)
         {
             try
             {
                 HttpClient client = CrearHttpClientToken();
-                HttpResponseMessage response = await client.GetAsync(_uriToken);
+                var content = new StringContent(JsonConvert.SerializeObject(login));
+                content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+                HttpResponseMessage response = await client.PostAsync(_uriToken,content);
                 await HandleResponse(response);
                 var resultado = await response.Content.ReadAsStringAsync();
                 Token token = JsonConvert.DeserializeObject<Token>(resultado);
                 if (token != null)
-                    cache.SetearTokenCache(token);
+                    _cache.SetearTokenCache(token);
                 return token;
             }
             catch (HttpRequestExceptionEx ex)
@@ -172,6 +176,10 @@ namespace Cinte.Infraestructure.RequestProvider
                 throw ex;
             }
         }
+
+        public async Task<Token> PostConsultarTokenAsync(object objeto) => 
+        await this.ConsultarToken(objeto);
+
 
         /// <summary>
         /// Añade los headers a la peticion
@@ -264,6 +272,7 @@ namespace Cinte.Infraestructure.RequestProvider
             return _uri.ToString() + cadena;
         }
 
+     
         #endregion
 
     }

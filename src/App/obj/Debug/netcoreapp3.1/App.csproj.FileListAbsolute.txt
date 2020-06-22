@@ -188,6 +188,8 @@
 /home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/bin/Debug/netcoreapp3.1/appsettings.Development.json
 /home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/bin/Debug/netcoreapp3.1/appsettings.json
 /home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/bin/Debug/netcoreapp3.1/Properties/launchSettings.json
+/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/bin/Debug/netcoreapp3.1/Api.StaticWebAssets.xml
+/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/bin/Debug/netcoreapp3.1/Api
 /home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/bin/Debug/netcoreapp3.1/App.StaticWebAssets.xml
 /home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/bin/Debug/netcoreapp3.1/App
 /home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/bin/Debug/netcoreapp3.1/App.deps.json
@@ -197,6 +199,7 @@
 /home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/bin/Debug/netcoreapp3.1/App.pdb
 /home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/bin/Debug/netcoreapp3.1/App.Views.dll
 /home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/bin/Debug/netcoreapp3.1/App.Views.pdb
+/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/bin/Debug/netcoreapp3.1/Microsoft.AspNetCore.Authentication.JwtBearer.dll
 /home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/bin/Debug/netcoreapp3.1/Microsoft.AspNetCore.Cryptography.Internal.dll
 /home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/bin/Debug/netcoreapp3.1/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 /home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/bin/Debug/netcoreapp3.1/Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
@@ -240,6 +243,8 @@
 /home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/bin/Debug/netcoreapp3.1/Microsoft.Identity.Client.dll
 /home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/bin/Debug/netcoreapp3.1/Microsoft.IdentityModel.JsonWebTokens.dll
 /home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/bin/Debug/netcoreapp3.1/Microsoft.IdentityModel.Logging.dll
+/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/bin/Debug/netcoreapp3.1/Microsoft.IdentityModel.Protocols.dll
+/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/bin/Debug/netcoreapp3.1/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 /home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/bin/Debug/netcoreapp3.1/Microsoft.IdentityModel.Tokens.dll
 /home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/bin/Debug/netcoreapp3.1/Microsoft.OpenApi.dll
 /home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/bin/Debug/netcoreapp3.1/Microsoft.VisualStudio.Web.CodeGeneration.dll
@@ -340,12 +345,12 @@
 /home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/bin/Debug/netcoreapp3.1/runtimes/win-arm64/native/e_sqlite3.dll
 /home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/bin/Debug/netcoreapp3.1/runtimes/win-x64/native/e_sqlite3.dll
 /home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/bin/Debug/netcoreapp3.1/runtimes/win-x86/native/e_sqlite3.dll
-/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/bin/Debug/netcoreapp3.1/runtimes/unix/lib/netcoreapp2.0/System.Runtime.Caching.dll
-/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/bin/Debug/netcoreapp3.1/runtimes/win/lib/netcoreapp2.0/System.Runtime.Caching.dll
 /home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/bin/Debug/netcoreapp3.1/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll
+/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/bin/Debug/netcoreapp3.1/Api.dll
 /home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/bin/Debug/netcoreapp3.1/Core.dll
 /home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/bin/Debug/netcoreapp3.1/Infraestructure.dll
 /home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/bin/Debug/netcoreapp3.1/Infraestructure.pdb
+/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/bin/Debug/netcoreapp3.1/Api.pdb
 /home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/bin/Debug/netcoreapp3.1/Core.pdb
 /home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/obj/Debug/netcoreapp3.1/App.csprojAssemblyReference.cache
 /home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/obj/Debug/netcoreapp3.1/App.MvcApplicationPartsAssemblyInfo.cs
@@ -359,6 +364,7 @@
 /home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/obj/Debug/netcoreapp3.1/App.RazorCoreGenerate.cache
 /home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/obj/Debug/netcoreapp3.1/Razor/Views/Home/Index.cshtml.g.cs
 /home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/obj/Debug/netcoreapp3.1/Razor/Views/Home/Privacy.cshtml.g.cs
+/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/obj/Debug/netcoreapp3.1/Razor/Views/Manage/Login.cshtml.g.cs
 /home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/obj/Debug/netcoreapp3.1/Razor/Views/Shared/Error.cshtml.g.cs
 /home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_Layout.cshtml.g.cs
 /home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_ValidationScriptsPartial.cshtml.g.cs
@@ -372,10 +378,4 @@
 /home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/obj/Debug/netcoreapp3.1/staticwebassets/App.StaticWebAssets.xml
 /home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/obj/Debug/netcoreapp3.1/App.dll
 /home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/obj/Debug/netcoreapp3.1/App.pdb
-/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/bin/Debug/netcoreapp3.1/Api.StaticWebAssets.xml
-/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/bin/Debug/netcoreapp3.1/Api
-/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/bin/Debug/netcoreapp3.1/Microsoft.AspNetCore.Authentication.JwtBearer.dll
-/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/bin/Debug/netcoreapp3.1/Microsoft.IdentityModel.Protocols.dll
-/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/bin/Debug/netcoreapp3.1/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/bin/Debug/netcoreapp3.1/Api.dll
-/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/bin/Debug/netcoreapp3.1/Api.pdb
+/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/bin/Debug/netcoreapp3.1/runtimes/win/lib/netstandard2.0/System.Runtime.Caching.dll

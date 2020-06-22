@@ -2,12 +2,15 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Cinte.Api.Services.Interfaces;
 using Cinte.Api.Services.Tokens;
 using Cinte.Infraestructure.Data;
 using Cinte.Infraestructure.Identity;
+using Cinte.Infraestructure.RequestProvider;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -37,6 +40,10 @@ namespace Api
             services.AddDbContext<AppIdentityDbContext>(options =>
                 options.UseSqlite("Data Source=indentitydb.db"));
 
+              services.AddIdentity<Usuario, IdentityRole>()
+            .AddEntityFrameworkStores<AppIdentityDbContext>()
+            .AddDefaultTokenProviders();
+
             services.ValidacionJwtServicesExtensions(Configuration);
 
             services.AddCors(options =>
@@ -50,6 +57,9 @@ namespace Api
 
             services.AddSwaggerGen(c =>
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "CinteApiInfo", Version = "v1" }));
+
+                services.AddScoped<IGeneradorToken,GeneradorToken>();
+                // services.AddSingleton<CacheProvider>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -70,7 +80,7 @@ namespace Api
                 c.RoutePrefix = string.Empty;
             });
 
-            app.UseHttpsRedirection();
+            // app.UseHttpsRedirection();
             app.UseRouting();
             app.UseAuthentication();
 

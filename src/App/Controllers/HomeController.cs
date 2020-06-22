@@ -9,6 +9,7 @@ using App.Models;
 using Cinte.Infraestructure.RequestProvider;
 using Microsoft.Extensions.Configuration;
 using Api;
+using Cinte.Core.Infraestructure;
 
 namespace App.Controllers
 {
@@ -16,9 +17,11 @@ namespace App.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IConfiguration _config;
+        private readonly ICacheProvider _cache;
 
-        public HomeController(ILogger<HomeController> logger, IConfiguration config)
+        public HomeController(ILogger<HomeController> logger, IConfiguration config , ICacheProvider cache)
         {
+            _cache = cache;
             _logger = logger;
             _config = config;
         }
@@ -27,11 +30,13 @@ namespace App.Controllers
         {
             string uripeticion =_config["UrisApp:UriApi"] + "WeatherForecast";
             PeticionesService peticiones = new PeticionesService(
-                new Uri(uripeticion), new Uri(_config["UrisApp:UriToken"])
+               new Uri(_config["UrisApp:UriToken"]), 
+               _cache,
+               new Uri(uripeticion) 
             ); 
 
-           var resultado = await peticiones.GetAsync<WeatherForecast>();
-            return View();
+           var resultado = await peticiones.GetAsync<List<WeatherForecast>>();
+            return View(resultado);
         }
 
         public IActionResult Privacy()
