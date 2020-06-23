@@ -8,8 +8,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infraestructure.Data.Migrations
 {
     [DbContext(typeof(CinteDbContext))]
-    [Migration("20200620004606_InitiaCinteDbContext")]
-    partial class InitiaCinteDbContext
+    [Migration("20200622161943_InicialIdentity")]
+    partial class InicialIdentity
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

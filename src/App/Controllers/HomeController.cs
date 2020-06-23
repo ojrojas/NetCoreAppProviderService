@@ -10,33 +10,27 @@ using Cinte.Infraestructure.RequestProvider;
 using Microsoft.Extensions.Configuration;
 using Api;
 using Cinte.Core.Infraestructure;
+using Microsoft.AspNetCore.Authorization;
 
 namespace App.Controllers
 {
+    [Authorize(AuthenticationSchemes = "Bearer")]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IConfiguration _config;
         private readonly ICacheProvider _cache;
 
-        public HomeController(ILogger<HomeController> logger, IConfiguration config , ICacheProvider cache)
+        public HomeController(ILogger<HomeController> logger, IConfiguration config, ICacheProvider cache)
         {
             _cache = cache;
             _logger = logger;
             _config = config;
         }
 
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            string uripeticion =_config["UrisApp:UriApi"] + "WeatherForecast";
-            PeticionesService peticiones = new PeticionesService(
-               new Uri(_config["UrisApp:UriToken"]), 
-               _cache,
-               new Uri(uripeticion) 
-            ); 
-
-           var resultado = await peticiones.GetAsync<List<WeatherForecast>>();
-            return View(resultado);
+            return View();
         }
 
         public IActionResult Privacy()

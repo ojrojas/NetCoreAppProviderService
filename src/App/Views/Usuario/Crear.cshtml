@@ -1,0 +1,47 @@
+@model Cinte.Infraestructure.Identity.Usuario;
+
+@{
+    ViewData["Title"] = "Usuario Crear";
+}
+
+<div class="card">
+    <div class="card-body">
+    <h5 class="card-title">Crear Usuario</h5>
+<form action="Crear" method="POST">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="Nombre">Nombre</label>
+      <input class="form-control" asp-for="Nombre" placeholder="Nombre">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputApellido">Apellido</label>
+      <input class="form-control" id="inputApellido" asp-for="Apellido" placeholder="Apellido">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="intputTipoIden">Tipo Identificación</label>
+   <select id="intputTipoIden" asp-for="TipoIdentificacion">
+       <option value="1">Algo1</option>
+       <option value="2">Algo2</option>
+       <option value="3">Algo3</option>
+       <option value="4">Algo4</option>
+   </select>
+  </div>
+  <div class="form-group">
+    <label for="inputNumIden">Numero Identificación</label>
+    <input type="text" class="form-control" asp-for="NumeroDocumento" id="inputNumIden" placeholder="Numero de Identificación">
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail">Email</label>
+      <input type="email" class="form-control" asp-for="Email" id="inputEmail">
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputContrasena">Contraseña</label>
+        <input type="password" class="form-control" asp-for="Contrasena" id="inputContrasena">
+    </div>
+    </div>
+   <button type="submit" class="btn btn-primary">Crear</button>
+</form>
+</div>
+</div>

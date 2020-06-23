@@ -59,6 +59,8 @@ namespace Cinte.Api.Controllers
         /// <date>09/06/2020</date>
         private readonly IGeneradorToken _generadorToken;
 
+        private readonly AppIdentityDbContext _context;
+
         /// <summary>
         /// Construcctor de Controlador que inyecta las interfaces a los servicios
         /// constituidos para el este controlador
@@ -75,13 +77,15 @@ namespace Cinte.Api.Controllers
             IConfiguration config,
             IGeneradorToken generadorToken,
             SignInManager<Usuario> signInManager,
-            UserManager<Usuario> userManager)
+            UserManager<Usuario> userManager,
+            AppIdentityDbContext context)
         {
             _logger = logger;
             _config = config;
             _signInManager = signInManager;
             _generadorToken = generadorToken;
             _userManager = userManager;
+            _context = context;
 
         }
 
@@ -117,6 +121,22 @@ namespace Cinte.Api.Controllers
         }
 
         /// <summary>
+        /// ObtenerUsuarios
+        /// </summary>
+        /// <param name="usuario">Modelo de vista para eliminar usuarios</param>
+        /// <returns>IdentityResult que notifica la eliminacion de
+        /// los usuarios</returns>
+        /// <author>Oscar Julian Rojas</author>
+        /// <date>09/06/2020</date>
+        [Authorize(AuthenticationSchemes = "Bearer")]
+        [HttpGet]
+        [ActionName("EliminarUsuarioApp")]
+        public IActionResult ObtenerUsuario()
+        {
+            return Ok(_context.Users);
+        }
+
+        /// <summary>
         /// CrearUsuarioApp
         /// </summary>
         /// <param name="usuario">Modelo de vista entrada para 
@@ -126,7 +146,6 @@ namespace Cinte.Api.Controllers
         /// <date>09/06/2020</date>
         [Authorize(AuthenticationSchemes = "Bearer")]
         [HttpPost]
-        [Route("CrearUsuarioApp")]
         [ActionName("CrearUsuarioApp")]
         public async Task<IActionResult> CrearUsuarioApp(UsuarioViewModel usuario)
         {
@@ -159,8 +178,7 @@ namespace Cinte.Api.Controllers
         /// <author>Oscar Julian Rojas</author>
         /// <date>09/06/2020</date>
         [Authorize(AuthenticationSchemes = "Bearer")]
-        [HttpPost]
-        [Route("EliminarUsuarioApp")]
+        [HttpDelete]
         [ActionName("EliminarUsuarioApp")]
         public async Task<IActionResult> EliminarUsuarioApp(UsuarioViewModel usuario)
         {

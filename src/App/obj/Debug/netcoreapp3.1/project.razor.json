@@ -20521,13 +20521,33 @@
   "RootNamespace": "App",
   "Documents": [
     {
+      "FilePath": "/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/Views/Usuario/Eliminar.cshtml",
+      "TargetPath": "Views\\Usuario\\Eliminar.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/Views/Usuario/Crear.cshtml",
+      "TargetPath": "Views\\Usuario\\Crear.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/Views/Shared/_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/Views/Usuario/Index.cshtml",
+      "TargetPath": "Views\\Usuario\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/Views/Shared/_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/Views/Usuario/Actulizar.cshtml",
+      "TargetPath": "Views\\Usuario\\Actulizar.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -20546,6 +20566,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/Views/Usuario/Detalle.cshtml",
+      "TargetPath": "Views\\Usuario\\Detalle.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/Views/Home/Privacy.cshtml",
       "TargetPath": "Views\\Home\\Privacy.cshtml",
       "FileKind": "mvc"
@@ -20558,6 +20583,11 @@
     {
       "FilePath": "/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/Views/Home/Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/Views/Juego/Index.cshtml",
+      "TargetPath": "Views\\Juego\\Index.cshtml",
       "FileKind": "mvc"
     }
   ],

@@ -379,3 +379,9 @@
 /home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/obj/Debug/netcoreapp3.1/App.dll
 /home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/obj/Debug/netcoreapp3.1/App.pdb
 /home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/bin/Debug/netcoreapp3.1/runtimes/win/lib/netstandard2.0/System.Runtime.Caching.dll
+/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/obj/Debug/netcoreapp3.1/Razor/Views/Usuario/Actulizar.cshtml.g.cs
+/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/obj/Debug/netcoreapp3.1/Razor/Views/Usuario/Crear.cshtml.g.cs
+/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/obj/Debug/netcoreapp3.1/Razor/Views/Usuario/Detalle.cshtml.g.cs
+/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/obj/Debug/netcoreapp3.1/Razor/Views/Usuario/Index.cshtml.g.cs
+/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/obj/Debug/netcoreapp3.1/Razor/Views/Usuario/Eliminar.cshtml.g.cs
+/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/obj/Debug/netcoreapp3.1/Razor/Views/Juego/Index.cshtml.g.cs

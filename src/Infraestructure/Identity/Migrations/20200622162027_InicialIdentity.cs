@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Infraestructure.Identity.Migrations
 {
-    public partial class InitialIdentity : Migration
+    public partial class InicialIdentity : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -77,7 +77,8 @@ namespace Infraestructure.Identity.Migrations
                     Nombre = table.Column<string>(nullable: true),
                     Apellido = table.Column<string>(nullable: true),
                     TipoIdentificacionId = table.Column<string>(nullable: true),
-                    NumeroDocumento = table.Column<string>(nullable: true)
+                    NumeroDocumento = table.Column<string>(nullable: true),
+                    Contrasena = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

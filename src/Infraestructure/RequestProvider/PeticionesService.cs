@@ -167,7 +167,7 @@ namespace Cinte.Infraestructure.RequestProvider
                 await HandleResponse(response);
                 var resultado = await response.Content.ReadAsStringAsync();
                 Token token = JsonConvert.DeserializeObject<Token>(resultado);
-                if (token != null)
+                if (token.Token_Auth != null)
                     _cache.SetearTokenCache(token);
                 return token;
             }

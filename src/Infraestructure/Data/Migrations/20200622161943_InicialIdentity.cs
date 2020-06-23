@@ -2,7 +2,7 @@
 
 namespace Infraestructure.Data.Migrations
 {
-    public partial class InitiaCinteDbContext : Migration
+    public partial class InicialIdentity : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
