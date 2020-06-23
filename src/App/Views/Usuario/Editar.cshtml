@@ -6,12 +6,12 @@
 
 <div class="card">
     <div class="card-body">
-    <h5 class="card-title">Actualizar Usuario</h5>
-<form>
+    <h5 class="card-title">Editar Usuario</h5>
+<form action="Editar" method="POST">
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="Nombre">Nombre</label>
-      <input type="email" class="form-control" asp-for="Nombre" placeholder="Nombre">
+      <input class="form-control" asp-for="Nombre" placeholder="Nombre">
     </div>
     <div class="form-group col-md-6">
       <label for="inputApellido">Apellido</label>
@@ -20,11 +20,11 @@
   </div>
   <div class="form-group">
     <label for="intputTipoIden">Tipo Identificación</label>
-   <select id="intputTipoIden" asp-for="TipoIdentificacion">
-       <option value="algo1">Algo1</option>
-       <option value="algo2">Algo2</option>
-       <option value="algo3">Algo3</option>
-       <option value="algo4">Algo4</option>
+   <select id="intputTipoIden" asp-for="TipoDocumento">
+       <option value="aaaaa">Algo1</option>
+       <option value="bbbbb">Algo2</option>
+       <option value="ccccc">Algo3</option>
+       <option value="ddddd">Algo4</option>
    </select>
   </div>
   <div class="form-group">
@@ -33,8 +33,8 @@
   </div>
   <div class="form-row">
     <div class="form-group col-md-6">
-      <label for="inputCity">City</label>
-      <input type="email" class="form-control" asp-for="Email" id="inputCity">
+      <label for="inputEmail">Email</label>
+      <input type="email" class="form-control" asp-for="Email" id="inputEmail">
     </div>
     <div class="form-group col-md-4">
       <label for="inputContrasena">Contraseña</label>

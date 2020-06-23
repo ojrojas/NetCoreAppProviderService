@@ -33,15 +33,25 @@ namespace App
 
             services.AddControllersWithViews();
 
+            services.AddDbContext<CinteDbContext>(c =>
+            c.UseSqlite("Data Source=/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/Api/cintedb.db"));
+         
             services.AddDbContext<AppIdentityDbContext>(options =>
-            options.UseSqlite("Data Source=indentitydb.db"));
+            options.UseSqlite("Data Source=/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/Api/indentitydb.db"));
 
             services.AddIdentity<Usuario, IdentityRole>()
           .AddEntityFrameworkStores<AppIdentityDbContext>()
           .AddDefaultTokenProviders();
 
+          services.ConfigureApplicationCookie(options =>
+    {
+        // Cookie settings
+        options.Cookie.HttpOnly = true;
+        options.ExpireTimeSpan = TimeSpan.FromMinutes(120);
 
-            services.ValidacionJwtServicesExtensions(Configuration);
+        options.LoginPath = "/Manage/Login";
+        options.SlidingExpiration = true;
+    });
 
             services.AddCors(options =>
              options.AddPolicy("CorsPolicy",
@@ -80,25 +90,11 @@ namespace App
 
             app.UseAuthorization();
 
-            app.UseStatusCodePages(async context =>
-            {
-                var request = context.HttpContext.Request;
-                var response = context.HttpContext.Response;
-
-                if (response.StatusCode == (int)HttpStatusCode.Unauthorized)
-                // you may also check requests path to do this only for specific methods       
-                // && request.Path.Value.StartsWith("/specificPath")
-
-                {
-                    response.Redirect("/Manage/login");
-                }
-            });
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Manage}/{action=Login}/{id?}");
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }

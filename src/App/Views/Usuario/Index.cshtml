@@ -4,6 +4,11 @@
     ViewData["Title"] = "Usuarios";
 }
 
+<div class="card">
+    <div class="card-body">
+    <h5 class="card-title">Lista Usuarios</h5>
+    <a class="btn btn-primary" asp-action="Crear"> Crear Usuario </a>
+    <br>
 <table class="table">
     <thead>
         <tr>
@@ -14,7 +19,7 @@
                 @Html.DisplayNameFor(model => model.Apellido)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.TipoIdentificacion)
+                @Html.DisplayNameFor(model => model.TipoDocumento)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.NumeroDocumento)
@@ -35,7 +40,7 @@
                 @Html.DisplayFor(modelItem => item.Apellido)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.TipoIdentificacion)
+                @Html.DisplayFor(modelItem => item.TipoDocumento)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.NumeroDocumento)
@@ -52,3 +57,5 @@
 }
     </tbody>
 </table>
+    </div>
+</div>

@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infraestructure.Identity.Migrations
 {
     [DbContext(typeof(AppIdentityDbContext))]
-    [Migration("20200622162027_InicialIdentity")]
+    [Migration("20200623173824_InicialIdentity")]
     partial class InicialIdentity
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -17,22 +17,6 @@ namespace Infraestructure.Identity.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "3.1.5");
-
-            modelBuilder.Entity("Cinte.Core.Entities.TipoDocumento", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Nombre")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("codigo")
-                        .HasColumnType("INTEGER");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("TipoDocumento");
-                });
 
             modelBuilder.Entity("Cinte.Infraestructure.Identity.Usuario", b =>
                 {
@@ -91,7 +75,7 @@ namespace Infraestructure.Identity.Migrations
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("TipoIdentificacionId")
+                    b.Property<string>("TipoDocumento")
                         .HasColumnType("TEXT");
 
                     b.Property<bool>("TwoFactorEnabled")
@@ -109,8 +93,6 @@ namespace Infraestructure.Identity.Migrations
                     b.HasIndex("NormalizedUserName")
                         .IsUnique()
                         .HasName("UserNameIndex");
-
-                    b.HasIndex("TipoIdentificacionId");
 
                     b.ToTable("AspNetUsers");
                 });
@@ -241,13 +223,6 @@ namespace Infraestructure.Identity.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
-                });
-
-            modelBuilder.Entity("Cinte.Infraestructure.Identity.Usuario", b =>
-                {
-                    b.HasOne("Cinte.Core.Entities.TipoDocumento", "TipoIdentificacion")
-                        .WithMany()
-                        .HasForeignKey("TipoIdentificacionId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

@@ -9,7 +9,6 @@ namespace Cinte.Infraestructure.Data
 
         public CinteDbContext(DbContextOptions<CinteDbContext> options) : base(options)
         {
-            
         }
 
         protected override void OnModelCreating(ModelBuilder builder)

@@ -272,7 +272,53 @@ namespace Cinte.Infraestructure.RequestProvider
             return _uri.ToString() + cadena;
         }
 
-     
+        public async Task<T> PutAsync<T>(T objeto, Dictionary<string, string> headers=null)
+        {
+            var token = await ObtenerToken();
+            HttpClient httpClient = CrearHttpCliente(token);
+
+            if (headers != null)
+            {
+                AddHeaderParameter(httpClient, headers);
+            }
+
+            var content = new StringContent(JsonConvert.SerializeObject(objeto));
+            content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+            HttpResponseMessage response = await httpClient.PutAsync(_uri, content);
+
+            await HandleResponse(response);
+            string serialized = await response.Content.ReadAsStringAsync();
+
+            T result = await Task.Run(() =>
+                JsonConvert.DeserializeObject<T>(serialized, _serializerSettings));
+
+            return result;
+        }
+
+        public async Task<T> DeleteAsync<T>(T objeto, Dictionary<string, string> headers = null)
+        {
+             var token = await ObtenerToken();
+            HttpClient httpClient = CrearHttpCliente(token);
+
+            if (headers != null)
+            {
+                AddHeaderParameter(httpClient, headers);
+            }
+
+            var content = new StringContent(JsonConvert.SerializeObject(objeto));
+            content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+            HttpResponseMessage response = await httpClient.DeleteAsync(_uri);
+
+            await HandleResponse(response);
+            string serialized = await response.Content.ReadAsStringAsync();
+
+            T result = await Task.Run(() =>
+                JsonConvert.DeserializeObject<T>(serialized, _serializerSettings));
+
+            return result;
+        }
+
+
         #endregion
 
     }

@@ -17,7 +17,7 @@ using Cinte.Infraestructure.Identity;
 
 namespace App.Controllers
 {
-    [Authorize(AuthenticationSchemes = "Bearer")]
+    [Authorize]
     public class UsuarioController : Controller
     {
         private readonly ILogger<UsuarioController> _logger;
@@ -39,19 +39,17 @@ namespace App.Controllers
         {
             string uripeticion = "http://localhost:5002/manage";
             var peticiones = FactoryProvider.CrearProvider(_config, _cache, uripeticion);
-            var login = new LoginViewModel{ Email="algo", Contrasena="algo", Recuerdame=true};
-            var algo =await peticiones.PostConsultarTokenAsync(login);
             var usuarios = await peticiones.GetAsync<List<Usuario>>();
             return View(usuarios);
         }
 
         [HttpGet]
-        public async Task<IActionResult> Detalle(string id)
+        public async Task<IActionResult> Detalle(string Id)
         {
-              string uripeticion = "http://localhost:5002/usuario/CrearUsuarioApp";
+            string uripeticion = $"http://localhost:5002/manage/{Id}";
             var peticiones = FactoryProvider.CrearProvider(_config, _cache, uripeticion);
-            var usuarios = await peticiones.GetAsync<object>();
-            return View(usuarios);
+            var usuario = await peticiones.GetAsync<Usuario>();
+            return View(usuario);
         }
 
         [HttpGet]
@@ -70,32 +68,38 @@ namespace App.Controllers
         }
 
         [HttpGet]
-        public IActionResult Eliminar()
-        {
-         return View();
+        public async Task<IActionResult> EliminarAsync(string Id)
+        { 
+            string uripeticion = $"http://localhost:5002/manage/{Id}";
+            var peticiones = FactoryProvider.CrearProvider(_config, _cache, uripeticion);
+            var usuario = await peticiones.GetAsync<Usuario>();
+            return View(usuario);
         }
 
         [HttpPost]
         public async Task<IActionResult> Eliminar(UsuarioViewModel usuario)
         {
-            string uripeticion = "http://localhost:5002/manage/EliminarUsuario";
+            string uripeticion = "http://localhost:5002/manage";
             var peticiones = FactoryProvider.CrearProvider(_config, _cache, uripeticion);
-            await peticiones.PostAsync<object>(usuario);
+            await peticiones.DeleteAsync<object>(usuario);
             return View();
         }
 
         [HttpGet]
-        public IActionResult Actulizar()
+        public async Task<IActionResult> Editar(string Id)
         {
-         return View();
+            string uripeticion = $"http://localhost:5002/manage/{Id}";
+            var peticiones = FactoryProvider.CrearProvider(_config, _cache, uripeticion);
+            var usuario = await peticiones.GetAsync<Usuario>();
+            return View(usuario);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Actualizar(UsuarioViewModel usuario)
+        public async Task<IActionResult> Editar(UsuarioViewModel usuario)
         {
-            string uripeticion = "http://localhost:5002/manage/EliminarUsuario";
+            string uripeticion = "http://localhost:5002/manage";
             var peticiones = FactoryProvider.CrearProvider(_config, _cache, uripeticion);
-            await peticiones.PostAsync<object>(usuario);
+            await peticiones.PutAsync<object>(usuario);
             return View();
         }
 

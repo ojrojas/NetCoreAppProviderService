@@ -20521,6 +20521,11 @@
   "RootNamespace": "App",
   "Documents": [
     {
+      "FilePath": "/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/Views/Usuario/Editar.cshtml",
+      "TargetPath": "Views\\Usuario\\Editar.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/Views/Usuario/Eliminar.cshtml",
       "TargetPath": "Views\\Usuario\\Eliminar.cshtml",
       "FileKind": "mvc"
@@ -20543,11 +20548,6 @@
     {
       "FilePath": "/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/Views/Shared/_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/Views/Usuario/Actulizar.cshtml",
-      "TargetPath": "Views\\Usuario\\Actulizar.cshtml",
       "FileKind": "mvc"
     },
     {

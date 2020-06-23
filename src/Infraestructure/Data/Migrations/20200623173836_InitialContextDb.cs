@@ -2,7 +2,7 @@
 
 namespace Infraestructure.Data.Migrations
 {
-    public partial class InicialIdentity : Migration
+    public partial class InitialContextDb : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

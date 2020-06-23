@@ -130,10 +130,26 @@ namespace Cinte.Api.Controllers
         /// <date>09/06/2020</date>
         [Authorize(AuthenticationSchemes = "Bearer")]
         [HttpGet]
-        [ActionName("EliminarUsuarioApp")]
-        public IActionResult ObtenerUsuario()
+        [ActionName("ObtenerUsuarios")]
+        public IActionResult ObtenerUsuarios()
         {
             return Ok(_context.Users);
+        }
+
+         /// <summary>
+        /// ObtenerUsuarios
+        /// </summary>
+        /// <param name="usuario">Modelo de vista para eliminar usuarios</param>
+        /// <returns>IdentityResult que notifica la eliminacion de
+        /// los usuarios</returns>
+        /// <author>Oscar Julian Rojas</author>
+        /// <date>09/06/2020</date>
+        [Authorize(AuthenticationSchemes = "Bearer")]
+        [HttpGet("{id}")]
+        [ActionName("ObtenerUsuarios")]
+        public async Task<IActionResult> ObtenerUsuarios(string Id)
+        {
+            return Ok(await _context.Users.FindAsync(Id));
         }
 
         /// <summary>
@@ -149,7 +165,14 @@ namespace Cinte.Api.Controllers
         [ActionName("CrearUsuarioApp")]
         public async Task<IActionResult> CrearUsuarioApp(UsuarioViewModel usuario)
         {
-            var user = new Usuario { UserName = usuario.Nombre, Email = usuario.Email };
+            var user = new Usuario { 
+                UserName = usuario.Email, 
+                Email = usuario.Email,
+                Nombre = usuario.Nombre,
+                Apellido = usuario.Apellido,
+                TipoDocumento = usuario.TipoDocumento,
+                NumeroDocumento = usuario.NumeroDocumento, 
+                Contrasena = usuario.Contrasena };
             var result = await _userManager.CreateAsync(user, usuario.Contrasena);
             if (result.Succeeded)
             {
@@ -178,11 +201,11 @@ namespace Cinte.Api.Controllers
         /// <author>Oscar Julian Rojas</author>
         /// <date>09/06/2020</date>
         [Authorize(AuthenticationSchemes = "Bearer")]
-        [HttpDelete]
+        [HttpDelete("{id}")]
         [ActionName("EliminarUsuarioApp")]
-        public async Task<IActionResult> EliminarUsuarioApp(UsuarioViewModel usuario)
+        public async Task<IActionResult> EliminarUsuarioApp(string Id)
         {
-            var user = new Usuario { UserName = usuario.Nombre, Email = usuario.Email };
+            var user = await _userManager.FindByIdAsync(Id);
             var result = await _userManager.DeleteAsync(user);
             if (result.Succeeded)
             {
@@ -191,6 +214,47 @@ namespace Cinte.Api.Controllers
                     success = string.Format(
                    CultureInfo.CurrentCulture,
                    "usuario eliminado con exito")
+                }));
+            }
+
+            return BadRequest(new JsonResult(new
+            {
+                error = string.Format(
+                  CultureInfo.CurrentCulture,
+                  "No se pudo eliminar el usuario.")
+            }));
+        }
+
+         /// <summary>
+        /// EliminarUsuario
+        /// </summary>
+        /// <param name="usuario">Modelo de vista para eliminar usuarios</param>
+        /// <returns>IdentityResult que notifica la eliminacion de
+        /// los usuarios</returns>
+        /// <author>Oscar Julian Rojas</author>
+        /// <date>09/06/2020</date>
+        [Authorize(AuthenticationSchemes = "Bearer")]
+        [HttpPut]
+        [ActionName("ActualizarUsuarioApp")]
+        public async Task<IActionResult> ActualizarUsuarioApp(UsuarioViewModel usuario)
+        {
+           var user = new Usuario { 
+                UserName = usuario.Email, 
+                Email = usuario.Email,
+                Nombre = usuario.Nombre,
+                Apellido = usuario.Apellido,
+                TipoDocumento = usuario.TipoDocumento,
+                NumeroDocumento = usuario.NumeroDocumento, 
+                Contrasena = usuario.Contrasena };
+            var resultadoEliminar = _userManager.DeleteAsync(user);
+            var result = await _userManager.UpdateAsync(user);
+            if (result.Succeeded)
+            {
+                return Ok(new JsonResult(new
+                {
+                    success = string.Format(
+                   CultureInfo.CurrentCulture,
+                   "usuario actualizado con exito")
                 }));
             }
 

@@ -16,22 +16,6 @@ namespace Infraestructure.Identity.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "3.1.5");
 
-            modelBuilder.Entity("Cinte.Core.Entities.TipoDocumento", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Nombre")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("codigo")
-                        .HasColumnType("INTEGER");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("TipoDocumento");
-                });
-
             modelBuilder.Entity("Cinte.Infraestructure.Identity.Usuario", b =>
                 {
                     b.Property<string>("Id")
@@ -89,7 +73,7 @@ namespace Infraestructure.Identity.Migrations
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("TipoIdentificacionId")
+                    b.Property<string>("TipoDocumento")
                         .HasColumnType("TEXT");
 
                     b.Property<bool>("TwoFactorEnabled")
@@ -107,8 +91,6 @@ namespace Infraestructure.Identity.Migrations
                     b.HasIndex("NormalizedUserName")
                         .IsUnique()
                         .HasName("UserNameIndex");
-
-                    b.HasIndex("TipoIdentificacionId");
 
                     b.ToTable("AspNetUsers");
                 });
@@ -239,13 +221,6 @@ namespace Infraestructure.Identity.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
-                });
-
-            modelBuilder.Entity("Cinte.Infraestructure.Identity.Usuario", b =>
-                {
-                    b.HasOne("Cinte.Core.Entities.TipoDocumento", "TipoIdentificacion")
-                        .WithMany()
-                        .HasForeignKey("TipoIdentificacionId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
