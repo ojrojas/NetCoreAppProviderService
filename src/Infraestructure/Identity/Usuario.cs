@@ -1,7 +1,7 @@
-using Cinte.Core.Entities;
+using Orojas.Core.Entities;
 using Microsoft.AspNetCore.Identity;
 
-namespace Cinte.Infraestructure.Identity
+namespace Orojas.Infraestructure.Identity
 {
     public class Usuario : IdentityUser
     {

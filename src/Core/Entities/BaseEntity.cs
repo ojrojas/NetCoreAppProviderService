@@ -1,4 +1,4 @@
-namespace Cinte.Core.Entities
+namespace Orojas.Core.Entities
 {
     public abstract class BaseEntity 
     {

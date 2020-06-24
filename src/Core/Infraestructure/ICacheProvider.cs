@@ -1,6 +1,6 @@
-using Cinte.Core.Entities;
+using Orojas.Core.Entities;
 
-namespace Cinte.Core.Infraestructure
+namespace Orojas.Core.Infraestructure
 {
     public interface ICacheProvider
     {

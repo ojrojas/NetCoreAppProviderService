@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace Cinte.Infraestructure.Identity    
+namespace Orojas.Infraestructure.Identity    
 {
     public class AppIdentityDbContext : IdentityDbContext<Usuario>
     {

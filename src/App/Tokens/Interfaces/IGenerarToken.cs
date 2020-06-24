@@ -1,8 +1,8 @@
-using Cinte.Api.Models.ViewModels;
-using Cinte.Core.Entities;
+using Orojas.Api.Models.ViewModels;
+using Orojas.Core.Entities;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Cinte.App.Tokens.Interfaces
+namespace Orojas.App.Tokens.Interfaces
 {
     public interface IGeneradorToken
     {

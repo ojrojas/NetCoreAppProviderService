@@ -1,4 +1,4 @@
-namespace Cinte.Infraestructure.Exceptions
+namespace Orojas.Infraestructure.Exceptions
 {
     public class ServiceAuthenticationException : System.Exception
     {

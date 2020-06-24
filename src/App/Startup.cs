@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
-using Cinte.Api.Services.Tokens;
-using Cinte.App.Tokens;
-using Cinte.App.Tokens.Interfaces;
-using Cinte.Core.Infraestructure;
-using Cinte.Infraestructure.Data;
-using Cinte.Infraestructure.Identity;
-using Cinte.Infraestructure.RequestProvider;
+using Orojas.Api.Services.Tokens;
+using Orojas.App.Tokens;
+using Orojas.App.Tokens.Interfaces;
+using Orojas.Core.Infraestructure;
+using Orojas.Infraestructure.Data;
+using Orojas.Infraestructure.Identity;
+using Orojas.Infraestructure.RequestProvider;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -35,8 +35,8 @@ namespace App
         {
             services.AddControllersWithViews();
 
-            services.AddDbContext<CinteDbContext>(c =>
-            c.UseSqlite("Data Source=/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/Api/cintedb.db"));
+            services.AddDbContext<OrojasDbContext>(c =>
+            c.UseSqlite("Data Source=/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/Api/Orojasdb.db"));
 
             services.AddDbContext<AppIdentityDbContext>(options =>
             options.UseSqlite("Data Source=/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/Api/indentitydb.db"));

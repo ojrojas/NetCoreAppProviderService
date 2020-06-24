@@ -8,7 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 
-namespace Cinte.Api.Services.Tokens
+namespace Orojas.Api.Services.Tokens
 {
     public static class ValidacionJwtServices
     {

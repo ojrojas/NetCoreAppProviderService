@@ -1,4 +1,4 @@
-namespace Cinte.Api.Models.ViewModels
+namespace Orojas.Api.Models.ViewModels
 {
     public class LoginViewModel
     {

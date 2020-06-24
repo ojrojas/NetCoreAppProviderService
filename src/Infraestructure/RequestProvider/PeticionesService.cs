@@ -4,15 +4,15 @@ using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
-using Cinte.Core.Entities;
-using Cinte.Core.Infraestructure;
-using Cinte.Infraestructure.Exceptions;
-using Cinte.Infraestructure.Identity;
+using Orojas.Core.Entities;
+using Orojas.Core.Infraestructure;
+using Orojas.Infraestructure.Exceptions;
+using Orojas.Infraestructure.Identity;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
 
-namespace Cinte.Infraestructure.RequestProvider
+namespace Orojas.Infraestructure.RequestProvider
 {
     public class PeticionesService : IPeticionesService
     {

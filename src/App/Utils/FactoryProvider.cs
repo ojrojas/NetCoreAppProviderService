@@ -1,6 +1,6 @@
 using System;
-using Cinte.Core.Infraestructure;
-using Cinte.Infraestructure.RequestProvider;
+using Orojas.Core.Infraestructure;
+using Orojas.Infraestructure.RequestProvider;
 using Microsoft.Extensions.Configuration;
 
 namespace App.Utils

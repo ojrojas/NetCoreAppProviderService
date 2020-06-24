@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Cinte.Core.Entities;
+using Orojas.Core.Entities;
 
-namespace Cinte.Core.Infraestructure
+namespace Orojas.Core.Infraestructure
 {
     public interface IRepository<T> where T : BaseEntity, IAggregateRoot
     {

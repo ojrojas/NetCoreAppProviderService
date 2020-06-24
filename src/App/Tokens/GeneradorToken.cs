@@ -5,10 +5,10 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
-using Cinte.Api.Models.ViewModels;
-using Cinte.App.Tokens.Interfaces;
-using Cinte.Core.Entities;
-using Cinte.Infraestructure.Identity;
+using Orojas.Api.Models.ViewModels;
+using Orojas.App.Tokens.Interfaces;
+using Orojas.Core.Entities;
+using Orojas.Infraestructure.Identity;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -16,7 +16,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 
 
-namespace Cinte.App.Tokens
+namespace Orojas.App.Tokens
 {
     public class GeneradorToken : IGeneradorToken
     {

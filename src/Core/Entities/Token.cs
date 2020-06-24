@@ -1,6 +1,6 @@
-using Cinte.Core.Infraestructure;
+using Orojas.Core.Infraestructure;
 
-namespace Cinte.Core.Entities
+namespace Orojas.Core.Entities
 {
     public class Token
     {

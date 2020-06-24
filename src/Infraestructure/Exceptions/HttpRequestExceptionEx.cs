@@ -1,7 +1,7 @@
 using System.Net;
 using System.Net.Http;
 
-namespace Cinte.Infraestructure.Exceptions
+namespace Orojas.Infraestructure.Exceptions
 {
     public class HttpRequestExceptionEx: HttpRequestException
     {

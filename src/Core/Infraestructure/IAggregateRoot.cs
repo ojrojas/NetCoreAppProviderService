@@ -1,4 +1,4 @@
-namespace Cinte.Core.Infraestructure
+namespace Orojas.Core.Infraestructure
 {
     public interface IAggregateRoot
     {

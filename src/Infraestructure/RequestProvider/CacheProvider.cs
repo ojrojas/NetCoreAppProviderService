@@ -1,9 +1,9 @@
 using System;
-using Cinte.Core.Entities;
-using Cinte.Core.Infraestructure;
+using Orojas.Core.Entities;
+using Orojas.Core.Infraestructure;
 using Microsoft.Extensions.Caching.Memory;
 
-namespace Cinte.Infraestructure.RequestProvider
+namespace Orojas.Infraestructure.RequestProvider
 {
     public class CacheProvider : ICacheProvider
     {

@@ -1,13 +1,13 @@
 using System.Reflection;
-using Cinte.Core.Entities;
+using Orojas.Core.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace Cinte.Infraestructure.Data
+namespace Orojas.Infraestructure.Data
 {
-    public class CinteDbContext : DbContext
+    public class OrojasDbContext : DbContext
     {
 
-        public CinteDbContext(DbContextOptions<CinteDbContext> options) : base(options)
+        public OrojasDbContext(DbContextOptions<OrojasDbContext> options) : base(options)
         {
         }
 

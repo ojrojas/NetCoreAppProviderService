@@ -1,7 +1,7 @@
-using Cinte.Core.Infraestructure;
+using Orojas.Core.Infraestructure;
 using Microsoft.Extensions.Logging;
 
-namespace Cinte.Infraestructure.Logger
+namespace Orojas.Infraestructure.Logger
 {
      public class LoggerAdapter<T> : IAppLogger<T>
     {

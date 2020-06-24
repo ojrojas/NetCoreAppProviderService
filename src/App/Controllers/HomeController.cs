@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using App.Models;
-using Cinte.Infraestructure.RequestProvider;
+using Orojas.Infraestructure.RequestProvider;
 using Microsoft.Extensions.Configuration;
 using Api;
-using Cinte.Core.Infraestructure;
+using Orojas.Core.Infraestructure;
 using Microsoft.AspNetCore.Authorization;
 
 namespace App.Controllers

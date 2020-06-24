@@ -2,10 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Cinte.Api.Services.Tokens;
-using Cinte.Infraestructure.Data;
-using Cinte.Infraestructure.Identity;
-using Cinte.Infraestructure.RequestProvider;
+using Orojas.Api.Services.Tokens;
+using Orojas.Infraestructure.Data;
+using Orojas.Infraestructure.Identity;
+using Orojas.Infraestructure.RequestProvider;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -33,8 +33,8 @@ namespace Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddDbContext<CinteDbContext>(c =>
-               c.UseSqlite("Data Source=cintedb.db"));
+            services.AddDbContext<OrojasDbContext>(c =>
+               c.UseSqlite("Data Source=Orojasdb.db"));
 
             services.AddDbContext<AppIdentityDbContext>(options =>
                 options.UseSqlite("Data Source=indentitydb.db"));
@@ -53,7 +53,7 @@ namespace Api
                  ));
 
             services.AddSwaggerGen(c =>
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "CinteApiInfo", Version = "v1" }));
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "OrojasApiInfo", Version = "v1" }));
 
               services.ValidacionJwtServicesExtensions(Configuration);
                 // services.AddSingleton<CacheProvider>();

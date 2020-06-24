@@ -1,15 +1,15 @@
 using System.Globalization;
 using System.Net.Http;
 using System.Threading.Tasks;
-using Cinte.Api.Models.ViewModels;
-using Cinte.Infraestructure.Identity;
+using Orojas.Api.Models.ViewModels;
+using Orojas.Infraestructure.Identity;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace Cinte.Api.Controllers
+namespace Orojas.Api.Controllers
 {
     /// <summary>
     /// CuentasManager servicio que expone los endpoint del manager
