@@ -1,14 +1,3 @@
-/home/orojasg/Sources/Projects/NetCore/Cinte/src/Infraestructure/bin/Debug/netstandard2.1/Infraestructure.deps.json
-/home/orojasg/Sources/Projects/NetCore/Cinte/src/Infraestructure/bin/Debug/netstandard2.1/Infraestructure.dll
-/home/orojasg/Sources/Projects/NetCore/Cinte/src/Infraestructure/bin/Debug/netstandard2.1/Infraestructure.pdb
-/home/orojasg/Sources/Projects/NetCore/Cinte/src/Infraestructure/bin/Debug/netstandard2.1/Core.dll
-/home/orojasg/Sources/Projects/NetCore/Cinte/src/Infraestructure/bin/Debug/netstandard2.1/Core.pdb
-/home/orojasg/Sources/Projects/NetCore/Cinte/src/Infraestructure/obj/Debug/netstandard2.1/Infraestructure.csprojAssemblyReference.cache
-/home/orojasg/Sources/Projects/NetCore/Cinte/src/Infraestructure/obj/Debug/netstandard2.1/Infraestructure.AssemblyInfoInputs.cache
-/home/orojasg/Sources/Projects/NetCore/Cinte/src/Infraestructure/obj/Debug/netstandard2.1/Infraestructure.AssemblyInfo.cs
-/home/orojasg/Sources/Projects/NetCore/Cinte/src/Infraestructure/obj/Debug/netstandard2.1/Infraestructure.csproj.CopyComplete
-/home/orojasg/Sources/Projects/NetCore/Cinte/src/Infraestructure/obj/Debug/netstandard2.1/Infraestructure.dll
-/home/orojasg/Sources/Projects/NetCore/Cinte/src/Infraestructure/obj/Debug/netstandard2.1/Infraestructure.pdb
 /home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/Infraestructure/bin/Debug/netstandard2.1/Infraestructure.deps.json
 /home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/Infraestructure/bin/Debug/netstandard2.1/Infraestructure.dll
 /home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/Infraestructure/bin/Debug/netstandard2.1/Infraestructure.pdb

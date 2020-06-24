@@ -6,7 +6,8 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using Cinte.Api.Models.ViewModels;
-using Cinte.Api.Services.Interfaces;
+using Cinte.App.Tokens.Interfaces;
+using Cinte.Core.Entities;
 using Cinte.Infraestructure.Identity;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -15,7 +16,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 
 
-namespace Cinte.Api.Services.Tokens
+namespace Cinte.App.Tokens
 {
     public class GeneradorToken : IGeneradorToken
     {
@@ -25,7 +26,7 @@ namespace Cinte.Api.Services.Tokens
         {
             _config = config;
         }
-        JsonResult IGeneradorToken.GeneradorToken(LoginViewModel loginViewModel)
+        Token IGeneradorToken.GeneradorToken(LoginViewModel loginViewModel)
         {
             if (loginViewModel == null)
                 throw new ArgumentNullException(nameof(loginViewModel));
@@ -57,12 +58,12 @@ namespace Cinte.Api.Services.Tokens
                 signingCredentials: credenciales);
 
             string json_token = new JwtSecurityTokenHandler().WriteToken(token);
-            return new JsonResult(new
+            return new Token
             {
-                token_auth = json_token,
-                expire_in = TimeSpan.FromHours(2).TotalSeconds,
-                nickname = loginViewModel.Email
-            });
+                Token_Auth = json_token,
+                Expire_In = TimeSpan.FromHours(2).TotalSeconds,
+                NickName = loginViewModel.Email
+            };
         }
     }
 }

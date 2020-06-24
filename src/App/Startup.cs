@@ -4,10 +4,13 @@ using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using Cinte.Api.Services.Tokens;
+using Cinte.App.Tokens;
+using Cinte.App.Tokens.Interfaces;
 using Cinte.Core.Infraestructure;
 using Cinte.Infraestructure.Data;
 using Cinte.Infraestructure.Identity;
 using Cinte.Infraestructure.RequestProvider;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -30,29 +33,31 @@ namespace App
 
         public void ConfigureServices(IServiceCollection services)
         {
-
             services.AddControllersWithViews();
 
             services.AddDbContext<CinteDbContext>(c =>
             c.UseSqlite("Data Source=/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/Api/cintedb.db"));
-         
+
             services.AddDbContext<AppIdentityDbContext>(options =>
             options.UseSqlite("Data Source=/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/Api/indentitydb.db"));
 
             services.AddIdentity<Usuario, IdentityRole>()
-          .AddEntityFrameworkStores<AppIdentityDbContext>()
-          .AddDefaultTokenProviders();
+            .AddEntityFrameworkStores<AppIdentityDbContext>()
+            .AddDefaultTokenProviders();
 
-          services.ConfigureApplicationCookie(options =>
+          
+    services.ConfigureApplicationCookie(options =>
     {
         // Cookie settings
         options.Cookie.HttpOnly = true;
-        options.ExpireTimeSpan = TimeSpan.FromMinutes(120);
+        options.ExpireTimeSpan = TimeSpan.FromMinutes(5);
 
         options.LoginPath = "/Manage/Login";
+        // options.AccessDeniedPath = "/";
         options.SlidingExpiration = true;
     });
 
+                       
             services.AddCors(options =>
              options.AddPolicy("CorsPolicy",
                  builder => builder
@@ -63,7 +68,7 @@ namespace App
                  ));
 
             services.AddScoped<ICacheProvider, CacheProvider>();
-
+            services.AddScoped<IGeneradorToken,GeneradorToken>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

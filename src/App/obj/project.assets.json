@@ -10187,7 +10187,8 @@
       "Microsoft.EntityFrameworkCore.Tools >= 3.1.4",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.1.3",
       "Swashbuckle.AspNetCore >= 5.4.1",
-      "Swashbuckle.AspNetCore.SwaggerUI >= 5.4.1"
+      "Swashbuckle.AspNetCore.SwaggerUI >= 5.4.1",
+      "System.IdentityModel.Tokens.Jwt >= 6.6.0"
     ]
   },
   "packageFolders": {
@@ -10269,6 +10270,10 @@
           "Swashbuckle.AspNetCore.SwaggerUI": {
             "target": "Package",
             "version": "[5.4.1, )"
+          },
+          "System.IdentityModel.Tokens.Jwt": {
+            "target": "Package",
+            "version": "[6.6.0, )"
           }
         },
         "imports": [

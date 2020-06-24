@@ -14,7 +14,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace App.Controllers
 {
-      [Authorize]
+[Authorize]
     public class JuegoController : Controller
     {
         private readonly ILogger<HomeController> _logger;

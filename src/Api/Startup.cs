@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Cinte.Api.Services.Interfaces;
 using Cinte.Api.Services.Tokens;
 using Cinte.Infraestructure.Data;
 using Cinte.Infraestructure.Identity;
@@ -44,8 +43,6 @@ namespace Api
             .AddEntityFrameworkStores<AppIdentityDbContext>()
             .AddDefaultTokenProviders();
 
-            services.ValidacionJwtServicesExtensions(Configuration);
-
             services.AddCors(options =>
              options.AddPolicy("CorsPolicy",
                  builder => builder
@@ -58,7 +55,7 @@ namespace Api
             services.AddSwaggerGen(c =>
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "CinteApiInfo", Version = "v1" }));
 
-                services.AddScoped<IGeneradorToken,GeneradorToken>();
+              services.ValidacionJwtServicesExtensions(Configuration);
                 // services.AddSingleton<CacheProvider>();
         }
 

@@ -2,7 +2,6 @@ using System.Globalization;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Cinte.Api.Models.ViewModels;
-using Cinte.Api.Services.Interfaces;
 using Cinte.Infraestructure.Identity;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -51,13 +50,7 @@ namespace Cinte.Api.Controllers
         /// <date>09/06/2020</date>
         private UserManager<Usuario> _userManager;
 
-        /// <summary>
-        /// Interface que expone los servicios de 
-        /// creacion de token para autenticar  alos usuarios
-        /// </summary>
-        /// <author>Oscar Julian Rojas</author>
-        /// <date>09/06/2020</date>
-        private readonly IGeneradorToken _generadorToken;
+      
 
         private readonly AppIdentityDbContext _context;
 
@@ -75,7 +68,7 @@ namespace Cinte.Api.Controllers
         public ManageController(
             ILogger<ManageController> logger,
             IConfiguration config,
-            IGeneradorToken generadorToken,
+         
             SignInManager<Usuario> signInManager,
             UserManager<Usuario> userManager,
             AppIdentityDbContext context)
@@ -83,41 +76,9 @@ namespace Cinte.Api.Controllers
             _logger = logger;
             _config = config;
             _signInManager = signInManager;
-            _generadorToken = generadorToken;
+          
             _userManager = userManager;
             _context = context;
-
-        }
-
-        /// <summary>
-        /// ObtenerToken
-        /// </summary>
-        /// <param name="login">Vista del modelo de entrada del login.</param>
-        /// <returns>Devuelve el token que autentica al usuario en la aplicacion</returns>
-        /// <author>Oscar Julian Rojas</author>
-        /// <date>09/06/2020</date>
-        [HttpPost]
-        [Route("ObtenerToken")]
-        [ActionName("ObtenerToken")]
-        public async Task<IActionResult> ObtenerToken(LoginViewModel login)
-        {
-            HttpResponseMessage _responseMessage = new HttpResponseMessage();
-            Microsoft.AspNetCore.Identity.SignInResult resultado =
-            await _signInManager.PasswordSignInAsync(
-                login.Email,
-                login.Contrasena,
-                login.Recuerdame, lockoutOnFailure: true);
-
-            if (resultado.Succeeded)
-                return _generadorToken.GeneradorToken(login);
-
-            return
-                new JsonResult(new
-                {
-                    error = string.Format(
-                CultureInfo.CurrentCulture,
-                "Error de autenticación")
-                });
         }
 
         /// <summary>
