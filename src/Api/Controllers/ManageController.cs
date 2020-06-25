@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using Microsoft.EntityFrameworkCore;
+using Orojas.Api.Repository.Interface;
 
 namespace Orojas.Api.Controllers
 {
@@ -27,32 +29,7 @@ namespace Orojas.Api.Controllers
         /// <author>Oscar Julian Rojas</author>
         /// <date>09/06/2020</date>
         private readonly ILogger<ManageController> _logger;
-
-        /// <summary>
-        /// Interface que expone la configuracion de appsettings.json
-        /// </summary>
-        /// <author>Oscar Julian Rojas</author>
-        /// <date>09/06/2020</date>
-        private readonly IConfiguration _config;
-
-        /// <summary>
-        /// Interface que expone los servicios de SignInManager de netcore para el logueo
-        /// </summary>
-        /// <author>Oscar Julian Rojas</author>
-        /// <date>09/06/2020</date>
-        private SignInManager<Usuario> _signInManager;
-
-        /// <summary>
-        /// Interface que expone los servicios de UserManager 
-        /// para la creacion de usuarios tipo Identity
-        /// </summary>
-        /// <author>Oscar Julian Rojas</author>
-        /// <date>09/06/2020</date>
-        private UserManager<Usuario> _userManager;
-
-      
-
-        private readonly AppIdentityDbContext _context;
+        private readonly IManageRepository _manageRepository;
 
         /// <summary>
         /// Construcctor de Controlador que inyecta las interfaces a los servicios
@@ -67,18 +44,11 @@ namespace Orojas.Api.Controllers
         /// <date>09/06/2020</date>
         public ManageController(
             ILogger<ManageController> logger,
-            IConfiguration config,
-         
-            SignInManager<Usuario> signInManager,
-            UserManager<Usuario> userManager,
-            AppIdentityDbContext context)
-        {
+            IManageRepository manageRepository)
+            {
             _logger = logger;
-            _config = config;
-            _signInManager = signInManager;
+            _manageRepository = manageRepository;
           
-            _userManager = userManager;
-            _context = context;
         }
 
         /// <summary>
@@ -92,9 +62,9 @@ namespace Orojas.Api.Controllers
         [Authorize(AuthenticationSchemes = "Bearer")]
         [HttpGet]
         [ActionName("ObtenerUsuarios")]
-        public IActionResult ObtenerUsuarios()
+        public async Task<IActionResult> ObtenerUsuariosAsync()
         {
-            return Ok(_context.Users);
+            return Ok(await _manageRepository.ObtenerUsuariosAsync());
         }
 
          /// <summary>
@@ -107,10 +77,10 @@ namespace Orojas.Api.Controllers
         /// <date>09/06/2020</date>
         [Authorize(AuthenticationSchemes = "Bearer")]
         [HttpGet("{id}")]
-        [ActionName("ObtenerUsuarios")]
-        public async Task<IActionResult> ObtenerUsuarios(string Id)
+        [ActionName("ObtenerUsuario")]
+        public async Task<IActionResult> ObtenerUsuario(string Id)
         {
-            return Ok(await _context.Users.FindAsync(Id));
+            return Ok(await _manageRepository.ObtenerUsuarioAsync(Id));
         }
 
         /// <summary>
@@ -126,31 +96,7 @@ namespace Orojas.Api.Controllers
         [ActionName("CrearUsuarioApp")]
         public async Task<IActionResult> CrearUsuarioApp(UsuarioViewModel usuario)
         {
-            var user = new Usuario { 
-                UserName = usuario.Email, 
-                Email = usuario.Email,
-                Nombre = usuario.Nombre,
-                Apellido = usuario.Apellido,
-                TipoDocumento = usuario.TipoDocumento,
-                NumeroDocumento = usuario.NumeroDocumento, 
-                Contrasena = usuario.Contrasena };
-            var result = await _userManager.CreateAsync(user, usuario.Contrasena);
-            if (result.Succeeded)
-            {
-                return Ok(new JsonResult(new
-                {
-                    success = string.Format(
-                   CultureInfo.CurrentCulture,
-                   "usuario creado con exito")
-                }));
-            }
-
-            return BadRequest(new JsonResult(new
-            {
-                error = string.Format(
-                  CultureInfo.CurrentCulture,
-                  "No se pudo crear el usuario.")
-            }));
+           return await _manageRepository.CrearUsuarioApp(usuario);
         }
 
         /// <summary>
@@ -166,24 +112,7 @@ namespace Orojas.Api.Controllers
         [ActionName("EliminarUsuarioApp")]
         public async Task<IActionResult> EliminarUsuarioApp(string Id)
         {
-            var user = await _userManager.FindByIdAsync(Id);
-            var result = await _userManager.DeleteAsync(user);
-            if (result.Succeeded)
-            {
-                return Ok(new JsonResult(new
-                {
-                    success = string.Format(
-                   CultureInfo.CurrentCulture,
-                   "usuario eliminado con exito")
-                }));
-            }
-
-            return BadRequest(new JsonResult(new
-            {
-                error = string.Format(
-                  CultureInfo.CurrentCulture,
-                  "No se pudo eliminar el usuario.")
-            }));
+           return await _manageRepository.EliminarUsuarioApp(Id);
         }
 
          /// <summary>
@@ -199,32 +128,7 @@ namespace Orojas.Api.Controllers
         [ActionName("ActualizarUsuarioApp")]
         public async Task<IActionResult> ActualizarUsuarioApp(UsuarioViewModel usuario)
         {
-           var user = new Usuario { 
-                UserName = usuario.Email, 
-                Email = usuario.Email,
-                Nombre = usuario.Nombre,
-                Apellido = usuario.Apellido,
-                TipoDocumento = usuario.TipoDocumento,
-                NumeroDocumento = usuario.NumeroDocumento, 
-                Contrasena = usuario.Contrasena };
-            var resultadoEliminar = _userManager.DeleteAsync(user);
-            var result = await _userManager.UpdateAsync(user);
-            if (result.Succeeded)
-            {
-                return Ok(new JsonResult(new
-                {
-                    success = string.Format(
-                   CultureInfo.CurrentCulture,
-                   "usuario actualizado con exito")
-                }));
-            }
-
-            return BadRequest(new JsonResult(new
-            {
-                error = string.Format(
-                  CultureInfo.CurrentCulture,
-                  "No se pudo eliminar el usuario.")
-            }));
+          return await _manageRepository.ActualizarUsuarioApp(usuario);
         }
     }
 }

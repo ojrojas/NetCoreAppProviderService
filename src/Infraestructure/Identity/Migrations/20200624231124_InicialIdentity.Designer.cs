@@ -9,7 +9,7 @@ using Orojas.Infraestructure.Identity;
 namespace Infraestructure.Identity.Migrations
 {
     [DbContext(typeof(AppIdentityDbContext))]
-    [Migration("20200624172644_InicialIdentity")]
+    [Migration("20200624231124_InicialIdentity")]
     partial class InicialIdentity
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

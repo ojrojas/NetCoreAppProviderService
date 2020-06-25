@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<Orojas.Infraestructure.Identity.Usuario> SignInManager
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -26,6 +28,19 @@
                         </li>
                     </ul>
                 </div>
+                <div>
+                 <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                         @User.Identity.Name
+                        <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li role="separator" class="divider"></li>
+                        <li><form asp-controller="Manage" asp-action="Logut"><input type="button" class="btn btn-secondary" value="Salir"></form></li>
+                    </ul>
+                    </li>
+                </ul>
+      </div>
             </div>
         </nav>
     </header>

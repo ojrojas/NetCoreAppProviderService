@@ -1,14 +1,10 @@
-using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using App.Models;
-using Orojas.Infraestructure.RequestProvider;
 using Microsoft.Extensions.Configuration;
-using Api;
 using Orojas.Api.Models.ViewModels;
 using Orojas.Core.Infraestructure;
 using App.Utils;
@@ -39,7 +35,7 @@ namespace App.Controllers
         {
             string uripeticion = "http://localhost:5002/manage";
             var peticiones = FactoryProvider.CrearProvider(_config, _cache, uripeticion);
-            var usuarios = await peticiones.GetAsync<List<Usuario>>();
+            var usuarios = await peticiones.GetAsync<IReadOnlyList<Usuario>>();
             return View(usuarios);
         }
 
@@ -57,19 +53,23 @@ namespace App.Controllers
         {
             return View();
         }
-     
+
         [HttpPost]
         public async Task<IActionResult> Crear(UsuarioViewModel usuario)
         {
-            string uripeticion = "http://localhost:5002/manage";
-            var peticiones = FactoryProvider.CrearProvider(_config, _cache, uripeticion);
-            var algo = await peticiones.PostAsync<object>(usuario);
-            return View();
+            if (ModelState.IsValid)
+            {
+                string uripeticion = "http://localhost:5002/manage";
+                var peticiones = FactoryProvider.CrearProvider(_config, _cache, uripeticion);
+                var algo = await peticiones.PostAsync<object>(usuario);
+                return View();
+            }
+            return View(usuario);
         }
 
         [HttpGet]
         public async Task<IActionResult> EliminarAsync(string Id)
-        { 
+        {
             string uripeticion = $"http://localhost:5002/manage/{Id}";
             var peticiones = FactoryProvider.CrearProvider(_config, _cache, uripeticion);
             var usuario = await peticiones.GetAsync<Usuario>();
@@ -79,10 +79,14 @@ namespace App.Controllers
         [HttpPost]
         public async Task<IActionResult> Eliminar(UsuarioViewModel usuario)
         {
-            string uripeticion = "http://localhost:5002/manage";
-            var peticiones = FactoryProvider.CrearProvider(_config, _cache, uripeticion);
-            await peticiones.DeleteAsync<object>(usuario);
-            return View();
+            if (ModelState.IsValid)
+            {
+                string uripeticion = $"http://localhost:5002/manage/{usuario.Id}";
+                var peticiones = FactoryProvider.CrearProvider(_config, _cache, uripeticion);
+                await peticiones.DeleteAsync<object>(usuario);
+                return View();
+            }
+            return View(usuario);
         }
 
         [HttpGet]
@@ -97,10 +101,14 @@ namespace App.Controllers
         [HttpPost]
         public async Task<IActionResult> Editar(UsuarioViewModel usuario)
         {
-            string uripeticion = "http://localhost:5002/manage";
-            var peticiones = FactoryProvider.CrearProvider(_config, _cache, uripeticion);
-            await peticiones.PutAsync<object>(usuario);
-            return View();
+            if (ModelState.IsValid)
+            {
+                string uripeticion = "http://localhost:5002/manage";
+                var peticiones = FactoryProvider.CrearProvider(_config, _cache, uripeticion);
+                await peticiones.PutAsync<object>(usuario);
+                return View();
+            }
+            return View(usuario);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
