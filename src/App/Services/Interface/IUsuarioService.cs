@@ -12,6 +12,6 @@ namespace Orojas.App.Services.Interface
          Task<Usuario> ObtenerUsuarioAsync(string Id);
          Task<object> CrearUsuarioAsync(UsuarioViewModel usuario);
          Task<object> EditarUsuarioAsync(UsuarioViewModel usuario);
-         Task<object> EliminarUsuarioAsync(UsuarioViewModel usuario);
+         Task<object> EliminarUsuarioAsync(string Id);
     }
 }

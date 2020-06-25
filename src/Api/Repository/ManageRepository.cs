@@ -12,7 +12,6 @@ using Orojas.Infraestructure.Identity;
 
 namespace Orojas.Api.Repository
 {
-
     public class ManageRepository : IManageRepository
     {
         /// <summary>
@@ -46,16 +45,20 @@ namespace Orojas.Api.Repository
 
         private readonly AppIdentityDbContext _context;
 
-        public ManageRepository(IConfiguration config,
+        public ManageRepository(
+            IConfiguration config,
             SignInManager<Usuario> signInManager,
             UserManager<Usuario> userManager,
-            AppIdentityDbContext context)
+            AppIdentityDbContext context,
+            ILogger<ManageRepository> logger)
         {
             _config = config;
             _signInManager = signInManager;
             _userManager = userManager;
             _context = context;
+            _logger = logger;
         }
+        
         public async Task<JsonResult> ActualizarUsuarioApp(UsuarioViewModel usuario)
         {
             var userEdit = new Usuario { 

@@ -10,6 +10,7 @@ using Orojas.Core.Infraestructure;
 using App.Utils;
 using Microsoft.AspNetCore.Authorization;
 using Orojas.Infraestructure.Identity;
+using Orojas.App.Services.Interface;
 
 namespace App.Controllers
 {
@@ -17,35 +18,26 @@ namespace App.Controllers
     public class UsuarioController : Controller
     {
         private readonly ILogger<UsuarioController> _logger;
-        private readonly IConfiguration _config;
-        private readonly ICacheProvider _cache;
+        private readonly IUsuarioService _usuarioService;
 
         public UsuarioController(
             ILogger<UsuarioController> logger,
-            IConfiguration config,
-            ICacheProvider cache)
+            IUsuarioService usuarioService)
         {
-            _cache = cache;
             _logger = logger;
-            _config = config;
+            _usuarioService = usuarioService;
         }
 
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            string uripeticion = "http://localhost:5002/manage";
-            var peticiones = FactoryProvider.CrearProvider(_config, _cache, uripeticion);
-            var usuarios = await peticiones.GetAsync<IReadOnlyList<Usuario>>();
-            return View(usuarios);
+            return View(await _usuarioService.ObtenerUsuariosAsync());
         }
 
         [HttpGet]
         public async Task<IActionResult> Detalle(string Id)
         {
-            string uripeticion = $"http://localhost:5002/manage/{Id}";
-            var peticiones = FactoryProvider.CrearProvider(_config, _cache, uripeticion);
-            var usuario = await peticiones.GetAsync<Usuario>();
-            return View(usuario);
+            return View(await _usuarioService.ObtenerUsuarioAsync(Id));
         }
 
         [HttpGet]
@@ -59,9 +51,7 @@ namespace App.Controllers
         {
             if (ModelState.IsValid)
             {
-                string uripeticion = "http://localhost:5002/manage";
-                var peticiones = FactoryProvider.CrearProvider(_config, _cache, uripeticion);
-                var algo = await peticiones.PostAsync<object>(usuario);
+                await _usuarioService.CrearUsuarioAsync(usuario);
                 return View();
             }
             return View(usuario);
@@ -70,9 +60,7 @@ namespace App.Controllers
         [HttpGet]
         public async Task<IActionResult> EliminarAsync(string Id)
         {
-            string uripeticion = $"http://localhost:5002/manage/{Id}";
-            var peticiones = FactoryProvider.CrearProvider(_config, _cache, uripeticion);
-            var usuario = await peticiones.GetAsync<Usuario>();
+          var usuario = await _usuarioService.ObtenerUsuarioAsync(Id);
             return View(usuario);
         }
 
@@ -81,9 +69,7 @@ namespace App.Controllers
         {
             if (ModelState.IsValid)
             {
-                string uripeticion = $"http://localhost:5002/manage/{usuario.Id}";
-                var peticiones = FactoryProvider.CrearProvider(_config, _cache, uripeticion);
-                await peticiones.DeleteAsync<object>(usuario);
+                await _usuarioService.EliminarUsuarioAsync(usuario.Id);
                 return View();
             }
             return View(usuario);
@@ -92,10 +78,7 @@ namespace App.Controllers
         [HttpGet]
         public async Task<IActionResult> Editar(string Id)
         {
-            string uripeticion = $"http://localhost:5002/manage/{Id}";
-            var peticiones = FactoryProvider.CrearProvider(_config, _cache, uripeticion);
-            var usuario = await peticiones.GetAsync<Usuario>();
-            return View(usuario);
+            return View(await _usuarioService.ObtenerUsuarioAsync(Id));
         }
 
         [HttpPost]
@@ -103,9 +86,7 @@ namespace App.Controllers
         {
             if (ModelState.IsValid)
             {
-                string uripeticion = "http://localhost:5002/manage";
-                var peticiones = FactoryProvider.CrearProvider(_config, _cache, uripeticion);
-                await peticiones.PutAsync<object>(usuario);
+               await _usuarioService.EditarUsuarioAsync(usuario);
                 return View();
             }
             return View(usuario);
