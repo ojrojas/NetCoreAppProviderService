@@ -24,6 +24,7 @@ namespace Orojas.Api.Services.Tokens
             })
             .AddJwtBearer(options =>
             {
+                options.SaveToken =true;
                 options.TokenValidationParameters = new TokenValidationParameters
                 {
                     ValidateIssuer = false,

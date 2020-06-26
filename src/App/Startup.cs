@@ -50,13 +50,14 @@ namespace App
 
             services.ConfigureApplicationCookie(options =>
             {
-        // Cookie settings
-        options.Cookie.HttpOnly = true;
+                // Cookie settings
+                options.Cookie.HttpOnly = true;
                 options.ExpireTimeSpan = TimeSpan.FromMinutes(5);
 
                 options.LoginPath = "/Manage/Login";
-        // options.AccessDeniedPath = "/";
-        options.SlidingExpiration = true;
+                // options.AccessDeniedPath = "/";
+                options.SlidingExpiration = true;
+                options.ExpireTimeSpan = TimeSpan.FromMinutes(120);
             });
 
 

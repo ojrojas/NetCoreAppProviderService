@@ -3,8 +3,6 @@
 /home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/bin/Debug/netcoreapp3.1/Properties/launchSettings.json
 /home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/bin/Debug/netcoreapp3.1/Api.StaticWebAssets.xml
 /home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/bin/Debug/netcoreapp3.1/Api
-/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/bin/Debug/netcoreapp3.1/package-lock.json
-/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/bin/Debug/netcoreapp3.1/package.json
 /home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/bin/Debug/netcoreapp3.1/App.StaticWebAssets.xml
 /home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/bin/Debug/netcoreapp3.1/App
 /home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/bin/Debug/netcoreapp3.1/App.deps.json
