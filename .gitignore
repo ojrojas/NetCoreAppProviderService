@@ -1,0 +1,11 @@
+src/App/node_modules
+src/App/bin
+src/App/obj
+src/Api/bin
+src/Api/obj
+src/Core/obj
+src/Core/bin
+src/Apitest/obj
+src/Apitest/bin
+src/Infraestructure/obj
+src/Infraestructure/bin

@@ -3,6 +3,8 @@
 /home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/bin/Debug/netcoreapp3.1/Properties/launchSettings.json
 /home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/bin/Debug/netcoreapp3.1/Api.StaticWebAssets.xml
 /home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/bin/Debug/netcoreapp3.1/Api
+/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/bin/Debug/netcoreapp3.1/package-lock.json
+/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/bin/Debug/netcoreapp3.1/package.json
 /home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/bin/Debug/netcoreapp3.1/App.StaticWebAssets.xml
 /home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/bin/Debug/netcoreapp3.1/App
 /home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/bin/Debug/netcoreapp3.1/App.deps.json
@@ -178,7 +180,6 @@
 /home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/obj/Debug/netcoreapp3.1/App.RazorCoreGenerate.cache
 /home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/obj/Debug/netcoreapp3.1/Razor/Views/Home/Index.cshtml.g.cs
 /home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/obj/Debug/netcoreapp3.1/Razor/Views/Home/Privacy.cshtml.g.cs
-/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/obj/Debug/netcoreapp3.1/Razor/Views/Juego/Index.cshtml.g.cs
 /home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/obj/Debug/netcoreapp3.1/Razor/Views/Manage/Login.cshtml.g.cs
 /home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/obj/Debug/netcoreapp3.1/Razor/Views/Shared/Error.cshtml.g.cs
 /home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_Layout.cshtml.g.cs
@@ -198,3 +199,5 @@
 /home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/obj/Debug/netcoreapp3.1/staticwebassets/App.StaticWebAssets.xml
 /home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/obj/Debug/netcoreapp3.1/App.dll
 /home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/obj/Debug/netcoreapp3.1/App.pdb
+/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/obj/Debug/netcoreapp3.1/Razor/Views/Juego/Index.cshtml.g.cs
+/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/App/bin/Debug/netcoreapp3.1/tsconfig.json

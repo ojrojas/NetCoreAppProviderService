@@ -1,22 +1,16 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Orojas.Api.Services.Tokens;
 using Orojas.Infraestructure.Data;
 using Orojas.Infraestructure.Identity;
-using Orojas.Infraestructure.RequestProvider;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Orojas.Api.Repository.Interface;
+using Orojas.Api.Repository;
 
 namespace Api
 {
@@ -57,6 +51,8 @@ namespace Api
 
               services.ValidacionJwtServicesExtensions(Configuration);
                 // services.AddSingleton<CacheProvider>();
+
+                services.AddScoped<IManageRepository, ManageRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

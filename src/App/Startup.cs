@@ -19,6 +19,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Orojas.App.Services.Interface;
+using Orojas.App.Services;
 
 namespace App
 {
@@ -45,19 +47,19 @@ namespace App
             .AddEntityFrameworkStores<AppIdentityDbContext>()
             .AddDefaultTokenProviders();
 
-          
-    services.ConfigureApplicationCookie(options =>
-    {
+
+            services.ConfigureApplicationCookie(options =>
+            {
         // Cookie settings
         options.Cookie.HttpOnly = true;
-        options.ExpireTimeSpan = TimeSpan.FromMinutes(5);
+                options.ExpireTimeSpan = TimeSpan.FromMinutes(5);
 
-        options.LoginPath = "/Manage/Login";
+                options.LoginPath = "/Manage/Login";
         // options.AccessDeniedPath = "/";
         options.SlidingExpiration = true;
-    });
+            });
 
-                       
+
             services.AddCors(options =>
              options.AddPolicy("CorsPolicy",
                  builder => builder
@@ -68,7 +70,9 @@ namespace App
                  ));
 
             services.AddScoped<ICacheProvider, CacheProvider>();
-            services.AddScoped<IGeneradorToken,GeneradorToken>();
+            services.AddScoped<IManageService, ManageService>();
+            services.AddScoped<IUsuarioService, UsuarioService>();
+            services.AddScoped<IGeneradorToken, GeneradorToken>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -87,6 +91,7 @@ namespace App
             app.UseCors("CorsPolicy");
 
             // app.UseHttpsRedirection();
+            app.UseDefaultFiles();
             app.UseStaticFiles();
 
             app.UseRouting();

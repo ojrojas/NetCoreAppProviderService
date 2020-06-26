@@ -1,5 +1,3 @@
-using Orojas.Core.Entities;
-
 namespace Orojas.Api.Models.ViewModels
 {
     public class UsuarioViewModel

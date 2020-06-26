@@ -1,5 +1,4 @@
 using System.Globalization;
-using System.Net.Http;
 using System.Threading.Tasks;
 using Orojas.Api.Models.ViewModels;
 using Orojas.Infraestructure.Identity;

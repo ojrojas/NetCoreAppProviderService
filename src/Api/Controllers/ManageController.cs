@@ -1,14 +1,8 @@
-using System.Globalization;
-using System.Net.Http;
 using System.Threading.Tasks;
 using Orojas.Api.Models.ViewModels;
-using Orojas.Infraestructure.Identity;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
-using Microsoft.EntityFrameworkCore;
 using Orojas.Api.Repository.Interface;
 
 namespace Orojas.Api.Controllers
