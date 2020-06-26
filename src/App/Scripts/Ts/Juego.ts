@@ -1,18 +1,23 @@
+
+/// variables globales del juego
 var contador = 0;
 var juego = ["", "", "", "", "", "", "", "", ""];
 var turno = 0;
 var marcadorX = 0;
 var marcadorO = 0;
+
+///Accion inicial del cargue de pagina.
 window.onload = function () {
     var el = document.getElementById("body")
     el.setAttribute("style", "height:" + window.innerHeight + "px")
     var celdas = document.getElementsByClassName("celda");
 
 
-
+/// por cada una de las 9 celda se agrega la funcion de click
     for (let celda of celdas) {
         (celda).addEventListener('click', function () {
             if (celda.textContent == "") {
+                //Si el turno es del primer jugador 
                 if (turno == 0) {
                     celda.innerHTML = "X"
                     turno++
@@ -20,7 +25,9 @@ window.onload = function () {
                     juego[celda.id] = "X"
                     document.getElementById("jugadorO").setAttribute("class", "turno")
                     document.getElementById("jugadorX").setAttribute("class", "normal")
+
                 } else {
+                    //Caso contrario si no es el primer jugador
                     celda.innerHTML = "O"
                     turno--
                     contador++
@@ -34,7 +41,7 @@ window.onload = function () {
         });
     }
 }
-
+///comprueba si se gano en cada jugada
 function comprobar(juego) {
     var celdas = document.getElementsByClassName("celda");
     if ((juego[0] == juego[1]) && (juego[1] == juego[2]) && juego[0] != "") {
@@ -90,7 +97,7 @@ function comprobar(juego) {
         vaciar()
     }
 }
-
+///Limpia el tablero y los marcadores del juego
 function vaciar() {
     var celdas = document.getElementsByClassName("celda");
     for (let celda of celdas) {

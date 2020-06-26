@@ -8,8 +8,19 @@ using Microsoft.IdentityModel.Tokens;
 
 namespace Orojas.Api.Services.Tokens
 {
+    /// <summary>
+    /// ValidacionJwtServices, validador y configuracion del servicio de authentication
+    /// </summary>
+    /// <author>Oscar Julian Rojas Garces</author>
+    /// <date>26/09/2020</date>
     public static class ValidacionJwtServices
     {
+        /// <summary>
+        /// Configuracion del servicios authentication
+        /// </summary>
+        /// <param name="services">Services netcore</param>
+        /// <param name="config">Configuracion aplicaciones</param>
+        /// <returns>Collection de configuracion de servicios aplicacion</returns>
         public static IServiceCollection ValidacionJwtServicesExtensions(
            this IServiceCollection services, IConfiguration config)
         {

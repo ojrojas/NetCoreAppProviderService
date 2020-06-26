@@ -8,11 +8,11 @@ using Orojas.Api.Repository.Interface;
 namespace Orojas.Api.Controllers
 {
     /// <summary>
-    /// CuentasManager servicio que expone los endpoint del manager
+    /// ManageController controlador que expone los endpoint del manager
     /// para el login y creacion de usuarios
     /// </summary>
     /// <author>Oscar Julian Rojas.</author>
-    /// <date>09/06/2020</date>
+    /// <date>24/06/2020</date>
     [ApiController]
     [Route("[controller]")]
     public class ManageController : ControllerBase
@@ -21,8 +21,14 @@ namespace Orojas.Api.Controllers
         /// Interface que expone los servicios de logger para el controlador
         /// </summary>
         /// <author>Oscar Julian Rojas</author>
-        /// <date>09/06/2020</date>
+         /// <date>24/06/2020</date>
         private readonly ILogger<ManageController> _logger;
+
+        /// <summary>
+        /// Interface que expone los metodos del respoitory manageRepository para el controlador
+        /// </summary>
+        /// <author>Oscar Julian Rojas</author>
+         /// <date>24/06/2020</date>
         private readonly IManageRepository _manageRepository;
 
         /// <summary>
@@ -30,19 +36,15 @@ namespace Orojas.Api.Controllers
         /// constituidos para el este controlador
         /// </summary>
         /// <param name="logger">Interface que informa la aplicacion</param>
-        /// <param name="config">Interface que expone la configuracion de la aplicacion</param>
-        /// <param name="generadorToken">Interface que expone los servicios de token</param>
-        /// <param name="signInManager">Interface que expone el signinmanager</param>
-        /// <param name="userManager">Interface que expone el usermanager</param>
+        /// <param name="manageRepository">Instancia del repository manageRepository</param>
         /// <author>Oscar Julian Rojas</author>
-        /// <date>09/06/2020</date>
+         /// <date>24/06/2020</date>
         public ManageController(
             ILogger<ManageController> logger,
             IManageRepository manageRepository)
             {
             _logger = logger;
             _manageRepository = manageRepository;
-          
         }
 
         /// <summary>
@@ -52,7 +54,7 @@ namespace Orojas.Api.Controllers
         /// <returns>IdentityResult que notifica la eliminacion de
         /// los usuarios</returns>
         /// <author>Oscar Julian Rojas</author>
-        /// <date>09/06/2020</date>
+         /// <date>24/06/2020</date>
         [Authorize(AuthenticationSchemes = "Bearer")]
         [HttpGet]
         [ActionName("ObtenerUsuarios")]
@@ -68,7 +70,7 @@ namespace Orojas.Api.Controllers
         /// <returns>IdentityResult que notifica la eliminacion de
         /// los usuarios</returns>
         /// <author>Oscar Julian Rojas</author>
-        /// <date>09/06/2020</date>
+         /// <date>24/06/2020</date>
         [Authorize(AuthenticationSchemes = "Bearer")]
         [HttpGet("{id}")]
         [ActionName("ObtenerUsuario")]
@@ -84,7 +86,7 @@ namespace Orojas.Api.Controllers
         /// la creacion de usuarios al sistema</param>
         /// <returns>IdentityResult que notifica si creo o no el usuario</returns>
         /// <author>Oscar Julian Rojas</author>
-        /// <date>09/06/2020</date>
+         /// <date>24/06/2020</date>
         [Authorize(AuthenticationSchemes = "Bearer")]
         [HttpPost]
         [ActionName("CrearUsuarioApp")]
@@ -100,7 +102,7 @@ namespace Orojas.Api.Controllers
         /// <returns>IdentityResult que notifica la eliminacion de
         /// los usuarios</returns>
         /// <author>Oscar Julian Rojas</author>
-        /// <date>09/06/2020</date>
+         /// <date>24/06/2020</date>
         [Authorize(AuthenticationSchemes = "Bearer")]
         [HttpDelete("{id}")]
         [ActionName("EliminarUsuarioApp")]
@@ -116,7 +118,7 @@ namespace Orojas.Api.Controllers
         /// <returns>IdentityResult que notifica la eliminacion de
         /// los usuarios</returns>
         /// <author>Oscar Julian Rojas</author>
-        /// <date>09/06/2020</date>
+         /// <date>24/06/2020</date>
         [Authorize(AuthenticationSchemes = "Bearer")]
         [HttpPut]
         [ActionName("ActualizarUsuarioApp")]

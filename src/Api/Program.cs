@@ -9,6 +9,11 @@ using Microsoft.Extensions.Logging;
 
 namespace Api
 {
+    /// <summary>
+    /// Aplicacion de arranque Program Main
+    /// </summary>
+    /// <author>Oscar Julian Rojas Garces</author>
+    /// <date>26/06/2020</date>
     public class Program
     {
         public static void Main(string[] args)

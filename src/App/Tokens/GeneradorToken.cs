@@ -18,6 +18,11 @@ using Microsoft.IdentityModel.Tokens;
 
 namespace Orojas.App.Tokens
 {
+    /// <summary>
+    /// GeneradorToken
+    /// </summary>
+    /// <author>Oscar Julian Rojas Garces</author>
+    /// <date>26/06/2020</date>
     public class GeneradorToken : IGeneradorToken
     {
 

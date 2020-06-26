@@ -27,9 +27,12 @@ namespace Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            /// expocision de los servicios de base datos para la aplicacion
             services.AddDbContext<OrojasDbContext>(c =>
                c.UseSqlite("Data Source=Orojasdb.db"));
 
+            /// expocision de los servicios de base datos para la identificacion de usuarios
             services.AddDbContext<AppIdentityDbContext>(options =>
                 options.UseSqlite("Data Source=indentitydb.db"));
 
@@ -51,7 +54,7 @@ namespace Api
 
               services.ValidacionJwtServicesExtensions(Configuration);
                 // services.AddSingleton<CacheProvider>();
-
+                //Injeccion de dependencia ManageRepository del api.
                 services.AddScoped<IManageRepository, ManageRepository>();
         }
 

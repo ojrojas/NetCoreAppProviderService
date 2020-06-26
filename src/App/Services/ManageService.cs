@@ -13,11 +13,32 @@ using Orojas.Infraestructure.Identity;
 
 namespace Orojas.App.Services
 {
+    /// <summary>
+    /// ManageService, implementacion que expoene los metodos de ManageService
+    /// </summary>
+    /// <author>Oscar Julian Rojas Garces</author>
+    /// <date>26/06/2020</date>
     public class ManageService : IManageService
     {
+        /// <summary>
+        /// Interface IConfiguration para informacion de api
+        /// </summary>
+        /// <author>Oscar Julian Rojas Garces.</author>
+        /// <date>26/06/2020</date>
         private readonly IConfiguration _config;
+
+        /// <summary>
+        /// Interface Cache para informacion de api
+        /// </summary>
+        /// <author>Oscar Julian Rojas Garces.</author>
+        /// <date>26/06/2020</date>
         private readonly ICacheProvider _cache;
 
+        /// <summary>
+        /// Interface Logger para informacion de api
+        /// </summary>
+        /// <author>Oscar Julian Rojas Garces.</author>
+        /// <date>26/06/2020</date>
         private readonly ILogger<ManageService> _logger;
 
         /// <summary>
@@ -48,6 +69,12 @@ namespace Orojas.App.Services
             _signInManager = signInManager;
             _generadorToken = generadorToken;
         }
+
+         /// <summary>
+        /// Login metodo que notifica si hubo o no logueo en la aplicacion
+        /// </summary>
+        /// <param name="login">Modelo de vista ingreso de dstos</param>
+        /// <returns>Booleano que notifica si o no</returns>
         public async Task<bool> Login(LoginViewModel login)
         {
             _logger.LogInformation("Petición de logueo");

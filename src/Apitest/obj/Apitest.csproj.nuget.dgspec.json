@@ -4,6 +4,111 @@
     "/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/Apitest/Apitest.csproj": {}
   },
   "projects": {
+    "/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/Api/Api.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/Api/Api.csproj",
+        "projectName": "Api",
+        "projectPath": "/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/Api/Api.csproj",
+        "packagesPath": "/home/orojasg/.nuget/packages/",
+        "outputPath": "/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/Api/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/orojasg/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/Infraestructure/Infraestructure.csproj": {
+                "projectPath": "/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/Infraestructure/Infraestructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[3.1.4, )"
+            },
+            "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.4, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.4, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[3.1.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[3.1.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.4, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[3.1.2, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[5.4.1, )"
+            },
+            "Swashbuckle.AspNetCore.SwaggerUI": {
+              "target": "Package",
+              "version": "[5.4.1, )"
+            },
+            "System.Runtime.Caching": {
+              "target": "Package",
+              "version": "[4.7.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/3.1.105/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/Apitest/Apitest.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -24,7 +129,14 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "projectReferences": {}
+            "projectReferences": {
+              "/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/Api/Api.csproj": {
+                "projectPath": "/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/Api/Api.csproj"
+              },
+              "/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/Infraestructure/Infraestructure.csproj": {
+                "projectPath": "/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/Infraestructure/Infraestructure.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -36,9 +148,17 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "FluentAssertions": {
+              "target": "Package",
+              "version": "[5.10.3, )"
+            },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
               "version": "[16.5.0, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.14.1, )"
             },
             "coverlet.collector": {
               "target": "Package",
@@ -65,6 +185,154 @@
           "warn": true,
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/3.1.105/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/Core/Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/Core/Core.csproj",
+        "projectName": "Core",
+        "projectPath": "/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/Core/Core.csproj",
+        "packagesPath": "/home/orojasg/.nuget/packages/",
+        "outputPath": "/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/Core/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/orojasg/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/3.1.105/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/Infraestructure/Infraestructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/Infraestructure/Infraestructure.csproj",
+        "projectName": "Infraestructure",
+        "projectPath": "/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/Infraestructure/Infraestructure.csproj",
+        "packagesPath": "/home/orojasg/.nuget/packages/",
+        "outputPath": "/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/Infraestructure/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/orojasg/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "projectReferences": {
+              "/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/Core/Core.csproj": {
+                "projectPath": "/home/orojasg/Sources/Test/NetCore/NetCoreAppProviderService/src/Core/Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.4, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[3.1.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[3.1.4, )"
+            },
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[6.6.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.6.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
               "privateAssets": "all"
             }
           },
