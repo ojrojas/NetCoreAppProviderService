@@ -1,5 +1,3 @@
-using Orojas.Core.Infraestructure;
-
 namespace Orojas.Core.Entities
 {
     public class Token

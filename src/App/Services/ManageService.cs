@@ -1,8 +1,6 @@
 using System.Net.Http;
 using System.Threading.Tasks;
-using App.Controllers;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Orojas.Api.Models.ViewModels;

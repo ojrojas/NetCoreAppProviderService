@@ -32,8 +32,8 @@ namespace Orojas.Api.Controllers
         private readonly IManageRepository _manageRepository;
 
         /// <summary>
-        /// Construcctor de Controlador que inyecta las interfaces a los servicios
-        /// constituidos para el este controlador
+        /// Constructor de Controlador que inyecta las interfaces a los servicios
+        /// constituidos para este controlador
         /// </summary>
         /// <param name="logger">Interface que informa la aplicacion</param>
         /// <param name="manageRepository">Instancia del repository manageRepository</param>

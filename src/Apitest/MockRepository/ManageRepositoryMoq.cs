@@ -1,12 +1,7 @@
 using Moq;
 using Apitest.MockRepository.Stubs;
-
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using Orojas.Api.Repository.Interface;
-using Microsoft.AspNetCore.Mvc;
 using Orojas.Api.Models.ViewModels;
-using Orojas.Infraestructure.Identity;
 
 namespace NetCoreApiTokenTest.MockRepository
 {
@@ -38,7 +33,6 @@ namespace NetCoreApiTokenTest.MockRepository
             //ObtenerUsuariosAsync
             _usuarioRepository.Setup((x) => x.ObtenerUsuariosAsync())
             .ReturnsAsync(UsuarioStub.listaUsuarios);
-          
         }
     }
 

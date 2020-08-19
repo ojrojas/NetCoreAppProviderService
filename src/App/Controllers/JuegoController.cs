@@ -1,14 +1,8 @@
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using App.Models;
-using Orojas.Infraestructure.RequestProvider;
 using Microsoft.Extensions.Configuration;
-using Api;
 using Orojas.Core.Infraestructure;
 using Microsoft.AspNetCore.Authorization;
 

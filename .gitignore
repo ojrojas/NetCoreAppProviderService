@@ -9,3 +9,4 @@ src/Apitest/obj
 src/Apitest/bin
 src/Infraestructure/obj
 src/Infraestructure/bin
+.sonarqube

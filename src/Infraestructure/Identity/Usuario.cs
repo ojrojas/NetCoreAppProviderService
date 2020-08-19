@@ -1,4 +1,3 @@
-using Orojas.Core.Entities;
 using Microsoft.AspNetCore.Identity;
 
 namespace Orojas.Infraestructure.Identity

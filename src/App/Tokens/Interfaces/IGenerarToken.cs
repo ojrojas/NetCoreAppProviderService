@@ -1,6 +1,5 @@
 using Orojas.Api.Models.ViewModels;
 using Orojas.Core.Entities;
-using Microsoft.AspNetCore.Mvc;
 
 namespace Orojas.App.Tokens.Interfaces
 {

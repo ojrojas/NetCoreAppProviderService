@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 using Orojas.Core.Entities;
 using Orojas.Core.Infraestructure;
 using Orojas.Infraestructure.Exceptions;
-using Orojas.Infraestructure.Identity;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;

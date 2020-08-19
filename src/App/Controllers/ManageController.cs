@@ -1,23 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using App.Models;
-using Orojas.Infraestructure.RequestProvider;
-using Microsoft.Extensions.Configuration;
-using Api;
 using Orojas.Api.Models.ViewModels;
-using Orojas.Core.Infraestructure;
-using App.Utils;
-using Microsoft.AspNetCore.Identity;
-using Orojas.Infraestructure.Identity;
-using Microsoft.AspNetCore.Authorization;
-using Orojas.App.Tokens.Interfaces;
-using System.Net.Http;
-using System.Globalization;
 using Orojas.App.Services.Interface;
 
 namespace App.Controllers
